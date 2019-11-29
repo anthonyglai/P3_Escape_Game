@@ -1,9 +1,9 @@
 package fr.escapegame;
 
-public class ModeDuel {
+public class ModeDuel extends ModeDeJeux  {
 
-	public ModeDuel() {
-		// TODO Auto-generated constructor stub
+
+	public void jouer() {
+
 	}
-
 }

@@ -1,9 +1,10 @@
 package fr.escapegame;
 
-public class ModeDefenseur {
+public class ModeDefenseur extends ModeDeJeux {
 
-	public ModeDefenseur() {
-		// TODO Auto-generated constructor stub
+
+	public void jouer() {
+
 	}
 
 }

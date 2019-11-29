@@ -7,11 +7,12 @@ import org.apache.log4j.Logger;
 import fr.escapegame.propriete.ChargerPropriete;
 
 public class Launcher {
-
+	
 	private static final Logger LOGGER = Logger.getLogger(Launcher.class);
 
 	public static void main(String[] args) {
 
+		
 		System.out.println("Le nombre de combinaison est " + ChargerPropriete.NB_COMBINAISON);
 		System.out.println("Le nombre d'essais est " + ChargerPropriete.NB_ESSAI);
 		System.out.println("Activation du mode développeur: " + ChargerPropriete.MODE_DEV);
@@ -27,10 +28,8 @@ public class Launcher {
 	 */
 
 	public static void reglement() {
-		System.out.println(" Bonjour :-) \n\r Si tu as pris connaissance des règles de jeux nous pouvons commencer tout de suite. \n\r ");
-		System.out.println(" Tout d'abord fais ton choix parmi les 3 modes de jeux ci-dessous:");
-		System.out.println("");
-		
+		System.out.println("Veuillez choisir parmi les 3 modes de jeux ci-dessous. \n\r ");
+			
 	}
 
 	public static void presentationDesModes() {
@@ -54,11 +53,11 @@ public class Launcher {
 			int nbMode = sc.nextInt();
 			switch (nbMode) {
 			case 1:
-				System.out.println(" Tu as choisi le mode Challenger");
+				System.out.println("Tu as choisi le mode Challenger");
 				jeu = new ModeChallenger();
 				break;
 			case 2:
-				System.out.println(" Tu as choisi le mode Defenseur");
+				System.out.println("Tu as choisi le mode Defenseur");
 				jeu = new ModeDefenseur();
 				break;
 			case 3:
@@ -70,7 +69,7 @@ public class Launcher {
 				System.exit(0);
 				break;
 			default:
-				System.out.println("Erreur de saisie, recommence. ");
+				System.out.println("Recommence ta saisie il n y a que 4 possibilité :");
 				selectionDuModeDeJeux();
 				break;
 			}
