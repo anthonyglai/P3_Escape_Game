@@ -23,8 +23,9 @@ public class Launcher {
 		
 	}
 
-	/**
-	 * Méthode pour l'introduction
+	/*
+	 * @param règlement
+	 * Le règlement du jeu
 	 */
 
 	public static void reglement() {
@@ -32,6 +33,10 @@ public class Launcher {
 			
 	}
 
+	/*
+	 * @param presentationDesModes
+	 * La présentation des modes de jeux
+	 */
 	public static void presentationDesModes() {
 
 		System.out.println(" 1 - Le mode Challenger  ");
@@ -40,6 +45,13 @@ public class Launcher {
 		System.out.println(" 4 - Sortie de la partie ");
 
 	}
+	
+	/*
+	 * @param selectionDuModeDeJeux
+	 * Présentation des 3 modes de jeux 
+	 * La selection est retourné dans le mode de jeu
+	 * 
+	 */
 
 	public static ModeDeJeux selectionDuModeDeJeux() {
 
@@ -80,6 +92,10 @@ public class Launcher {
 
 		}
 
+		/*
+		 * @return jeu
+		 * Retourne la selection du mode de jeux
+		 */
 		return jeu;
 
 	}

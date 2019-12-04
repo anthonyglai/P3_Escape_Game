@@ -1,5 +1,6 @@
 package fr.escapegame;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,35 +11,19 @@ public class ModeChallenger extends ModeDeJeux {
 	private Boolean modeDev = ChargerPropriete.MODE_DEV;
 	private int nbCombinaison = ChargerPropriete.NB_COMBINAISON;
 	private int nbEssai = ChargerPropriete.NB_ESSAI;
+	private int[] combinaison;
 
 	/*
-	 * On crée un tableau pour générer un random Le nombre de chiffres sera crée en
-	 * fonction de la variable nbCombinaison qui contient la constante
-	 * NB_COMBINAISON du fichier de propriété
+	 * @param combinaisonIA Génère une combinaison aléatoire entre 0 et 9 de x
+	 * chiffresdéterminé par la variable nbcombinaison
+	 * Activation ou non de la visibilité de la combinaison
+	 * 
 	 */
-
-	// TODO Auto-generated method stub
-
-	/*
-	 * On charge 2 constantes du fichier de propriété dans 2 variables
-	 */
-
-	/*
-	 * On crée un tableau pour générer un random Le nombre de chiffres sera crée en
-	 * fonction de la variable nbCombinaison qui contient la constante
-	 * NB_COMBINAISON du fichier de propriété
-	 */
-	public void combinaisonIa() {
-		int[] combinaison = new int[nbCombinaison];
+	public void combiAleatoire() {
+		this.combinaison = new int[nbCombinaison];
 		for (int i = 0; i < nbCombinaison; i++) {
 			combinaison[i] = (int) (Math.random() * 9);
-
 		}
-
-		/*
-		 * Une boucle for va afficher la combinaison On peut désactiver l'affichage avec
-		 * la variable modeDev qui contient la constance MODE_DEV
-		 */
 		for (int j = 0; j < combinaison.length; j++)
 			if (modeDev == true) {
 				System.out.print(combinaison[j]);
@@ -47,6 +32,11 @@ public class ModeChallenger extends ModeDeJeux {
 
 			}
 	}
+
+	/*
+	 * @param saisieJoueur Méthode qui permet à l'utilisateur de saisir une
+	 * combinaison
+	 */
 
 	public void saisieJoueur() {
 
@@ -61,27 +51,19 @@ public class ModeChallenger extends ModeDeJeux {
 		int[] saisie = new int[tab.length];
 		for (int k = 0; k < tab.length; k++) {
 			saisie[k] = Integer.parseInt(String.valueOf(tab[k]));
-			
-				System.out.print(saisie[k]);
+			System.out.println("");
+			 System.out.println(saisie[k]); 
+			for (int z = 0; z < 1 ; z++) {
+				System.out.print(combinaison[z]);
 
-			
-			
-			
+			}
 		}
-	}
 	
-	
-		
-			
-		
-			
-			
-		
-		
+	/* System.out.print("nombre" + combinaison[z]); */
+
 	public void jouer() {
-		combinaisonIa();
+		combiAleatoire();
 		saisieJoueur();
-		
-		
+
 	}
 }
