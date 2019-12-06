@@ -12,7 +12,8 @@ public class ModeChallenger extends ModeDeJeux {
 	private int nbCombinaison = ChargerPropriete.NB_COMBINAISON;
 	private int nbEssai = ChargerPropriete.NB_ESSAI;
 	private int[] combinaison;
-
+	public int saisie = 0;
+	
 	/*
 	 * @param combinaisonIA Génère une combinaison aléatoire entre 0 et 9 de x
 	 * chiffresdéterminé par la variable nbcombinaison Activation ou non de la
@@ -28,15 +29,13 @@ public class ModeChallenger extends ModeDeJeux {
 		}}
 	}
 	/*méthode retournant la combinaison*/
-	/*public int combiVisible( ) {
-		this.combiAleatoire();*/
-		
-		
-		
-	
+	public void combiVisible( ) {
+		System.out.println("");
+		System.out.println("La combinaison à deviner est :");
+		this.combiAleatoire();
+	}
+
 			
-	
-		
 	/*
 	 * @param saisieJoueur Méthode qui permet à l'utilisateur de saisir une
 	 * combinaison
@@ -48,24 +47,33 @@ public class ModeChallenger extends ModeDeJeux {
 		System.out.println();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Saisir " + nbCombinaison + " chiffres ");
+		
 		String nb = sc.nextLine();
 		char[] tab = nb.toCharArray();
-		int saisie = 0;
+		System.out.println("Vous avez saisi " + nb);
+		System.out.println("Le resultat est le suivant");
+		
 		for (int k = 0; k < tab.length; k++) {
 			saisie = Integer.parseInt(String.valueOf(tab[k]));
-			if (combinaison[k] == saisie) {
+			if (saisie == combinaison[k] ) {
 				System.out.print("=");
 			} else if (saisie < combinaison[k]) {
 				System.out.print("-");
 			} else {
 				System.out.print("+");
-				}
+			}
+			
 		}
-	}
+		System.out.println("");
+		System.out.print(saisie);
+		}
+		
+			
+	
 	/* System.out.print("nombre" + combinaison[z]); */
 
 	public void jouer() {
-		combiAleatoire();
+		combiVisible();
 		saisieJoueur();
 
 	}
