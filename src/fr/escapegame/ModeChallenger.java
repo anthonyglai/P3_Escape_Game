@@ -4,10 +4,11 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import fr.escapegame.propriete.ChargerPropriete;
 
-public class ModeChallenger {
+public class ModeChallenger extends ModeDeJeux {
 
 	private Boolean modeDev = ChargerPropriete.MODE_DEV;
 	private int nbCombinaison = ChargerPropriete.NB_COMBINAISON;
@@ -16,9 +17,9 @@ public class ModeChallenger {
 	private char[] tab;
 	private int saisie = 0;
 	private int combinaisonAleatoire = 0;
-	private int nombreDeTours = 1;
-
-	/** private int nombredeChance = nbEssai; */
+	private int nombreDeTours = 0;
+	private int chanceUtilisee = 1;
+	
 
 	/**
 	 * @param combinaisonIA Génère une combinaison aléatoire entre 0 et 9 de x
@@ -32,6 +33,7 @@ public class ModeChallenger {
 			combinaison[i] = (int) (Math.random() * 9);
 			if (modeDev == true) {
 				System.out.print(combinaison[i]);
+
 			}
 		}
 	}
@@ -43,10 +45,9 @@ public class ModeChallenger {
 	public void introduction() {
 		System.out.println("\n");
 		System.out.println("Bienvenue dans le mode Challenger.");
-		System.out.println(
-				"Tu vas devoir affronter une IA et deviner sa combinaison secrète de " + nbCombinaison + " chiffres. ");
+		System.out.println("Tu vas devoir affronter une IA et deviner sa combinaison secrète de " + nbCombinaison + " chiffres. ");
 		System.out.println("Tu as " + nbEssai + " essais. ");
-		System.out.println("A toi de jouer. ");
+		System.out.println("La partie commence ");
 
 	}
 
@@ -57,29 +58,41 @@ public class ModeChallenger {
 		System.out.println("\n");
 		System.out.println("La combinaison à deviner est :");
 		this.combiAleatoire();
+
 	}
 
 	/**
-	 * @param saisieJoueur Méthode qui permet à l'utilisateur 
-	 * de saisir une combinaison
+	 * @param saisieJoueur Méthode qui permet à l'utilisateur de saisir une
+	 * combinaison
 	 */
 	public void saisieJoueur() {
+		
+		
 		System.out.println("\n");
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Tu dois saisir " + nbCombinaison + " chiffres ");
-		try {
-			String nb = sc.nextLine();
-			tab = nb.toCharArray();
-			System.out.println("Vous avez saisi " + nb);
-		} catch (NumberFormatException f) {
-			System.out.println("erreur de saisie, recommence");
-			saisieJoueur();
+		System.out.println("Veuillez tenter votre essai n°" + chanceUtilisee++);
+		
+		
+		Scanner scan = new Scanner(System.in);
+		Pattern combinaison = Pattern.compile("[0-9]{"+ nbCombinaison +"}");
+		System.out.println("Saisir " + nbCombinaison + " chiffres");
+		while (!scan.hasNext(combinaison)) {
+		  if (scan.hasNext()) {
+		    System.out.println("Erreur vous avez saisi " + scan.next());
+		    System.out.println("Veuillez bien saisir " + nbCombinaison + " chiffres");
+		    
+		  }
 		}
+		
+		String nb = scan.nextLine();
+		tab = nb.toCharArray();
+		System.out.println("Vous avez saisi: " + nb);
 	}
 
+		
+
 	/**
-	 * @param comparaisonDeCombinaison Méthode qui compare 
-	 * la saisie joueur à la combinaison aléatoire
+	 * @param comparaisonDeCombinaison Méthode qui compare la saisie joueur à la
+	 * combinaison aléatoire
 	 */
 
 	public void comparaisonDeCombinaison() {
@@ -102,51 +115,53 @@ public class ModeChallenger {
 
 	/**
 	 * @param tentativeDeTrouverLaCombinaison Méthode permettant au joueur de faire
-	 * une saisie de la comparer à la
-	 * combinaison aléatoire autant de fois
-	 * que nombre d'essai paramétré dans le
-	 * fichier de propriété
+	 *une saisie de la comparer à la
+	 *combinaison aléatoire autant de fois
+	 *que nombre d'essai paramétré dans le
+	 *fichier de propriété
 	 */
 	public void tentativePourTrouverLaCombinaison() {
 
 		do {
 			comparaisonDeCombinaison();
 
-			System.out.println("\n\n");
+			System.out.println();
 			if (saisie == combinaisonAleatoire) {
-				System.out.print("Vous avez trouvé la combinaison ");
-			} else
-				System.out.println(
-						"Vous n'avez pas trouvé la combinaison exact, veuillez rententer votre chance.\n il vous reste "
-								+ --nbEssai + "chance");
-
+				System.out.print("Bravo, vous avez trouvé la combinaison ");
+			} else if (saisie < combinaisonAleatoire || saisie > combinaisonAleatoire)
+				System.out.println("Vous n'avez pas trouvé la combinaison \n "  );
+			
+			
+		
 			nombreDeTours++;
-		} while (saisie != combinaisonAleatoire & nombreDeTours <= nbEssai);
-	}
 
+		} while (saisie != combinaisonAleatoire && nombreDeTours != nbEssai);
+		
+
+	}
+	
+
+	
 	/**
 	 * @ propositionApresUneFinDePartie Méthode proposant plusieurs choix après la
 	 * fin d'une partie
 	 */
 
 	public void propositionApresUneFinDePartie() {
-		tentativePourTrouverLaCombinaison();
-
-		System.out.println("\n\n");
-		System.out.println(" Maintenant que la partie est fini ");
-		System.out.println("\n");
-		System.out.println(" Veuillez saisir un numéro parmi les 3 choix ci-dessous");
-		System.out.println("\n");
-		System.out.println(" 1- Recommencer une partie ");
-		System.out.println(" 2- Changer de mode de jeu");
-		System.out.println(" 3- Quitter la partie");
+		tentativePourTrouverLaCombinaison();	
+		System.out.println("La partie est terminée ");
+		System.out.println();
+		System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous");
+		System.out.println();
+		System.out.println("1- Recommencer une partie ");
+		System.out.println("2- Changer de mode de jeu");
+		System.out.println("3- Quitter le jeu");
 
 	}
 
 	/**
-	 * @param choixApresUneFinDePartie
-	 * Méthode proposant de faire une nouvelle partie
-	 * , un nouveau jeu ou sortir du jeu
+	 * @param choixApresUneFinDePartie Méthode proposant de faire une nouvelle
+	 * partie , un nouveau jeu ou sortir du jeu
 	 */
 
 	public void choixApresUneFinDePartie() {
@@ -161,6 +176,7 @@ public class ModeChallenger {
 				combinaisonVisible();
 				choixApresUneFinDePartie();
 				break;
+
 			case 2:
 				System.out.println("Retour à l'acceuil pour choisir un mode de jeux");
 				Launcher retourALauncher = new Launcher();
