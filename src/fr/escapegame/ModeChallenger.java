@@ -117,7 +117,7 @@ public void tentativePourTrouverLaCombinaison() {
 
 		System.out.println();
 		if (getSaisie() == getCombinaisonAleatoire()) {
-			System.out.print("Bravo, vous avez trouvé la combinaison ");
+			System.out.print("Vous avez gagné, vous avez trouvé la combinaison ");
 		} else if ( getSaisie() < getCombinaisonAleatoire() || getSaisie() > getCombinaisonAleatoire())
 			System.out.println("Vous n'avez pas trouvé la combinaison \n "  );
 		if (messagePerteDuJoueur++ == nbEssai) 
