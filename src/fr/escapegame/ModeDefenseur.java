@@ -8,8 +8,8 @@ import fr.escapegame.propriete.ChargerPropriete;
 
 public class ModeDefenseur extends ModeDeJeux {
 	
-	protected int[] combinaisonJoueur;
-	
+	private int[] combinaisonJoueur;
+	private int messagePerteIa = 1;
 	/**
 	 * @param introduction 
 	 * Méthode pour présenter le mode de jeu choisi
@@ -63,13 +63,13 @@ public class ModeDefenseur extends ModeDeJeux {
 			
 			public void comparaisonDeCombinaisonIAetJoueur() {
 				System.out.println("\n");
-				for(int i=0; i<combinaisonJoueur.length && i < combinaison.length;i++){
+				for(int i=0; i< combinaison.length && i <combinaisonJoueur.length;i++){
 					  if(combinaison[i]==combinaisonJoueur[i]){
 						  System.out.print("=");  
 					  } else if (combinaison[i] < combinaisonJoueur[i]) {
-						  System.out.print("-");
+						  System.out.print("+");
 						} else {
-							System.out.print("+");
+							System.out.print("-");
 
 					  } 
 				}}
@@ -78,6 +78,7 @@ public class ModeDefenseur extends ModeDeJeux {
 			public void tentativePourTrouverLaCombinaisonDuJoueur() {
 
 				do {
+					System.out.println("Essai n°" + chanceUtilisee++ + " pour l'IA");
 					combinaisonVisibleIa();
 					comparaisonDeCombinaisonIAetJoueur();
 
@@ -86,6 +87,9 @@ public class ModeDefenseur extends ModeDeJeux {
 						System.out.print("Bravo, l'IA a trouvé le résultat ");
 					} else  
 						System.out.println("L'IA n'a pas trouvé le résultat \n "  );
+					if (messagePerteIa++ == nbEssai) {
+						System.out.println("La partie est terminée l'IA a perdu");
+					}
 				
 					
 				
@@ -96,9 +100,9 @@ public class ModeDefenseur extends ModeDeJeux {
 
 			}
 			
+			
 			public void propositionApresUneFinDePartie() {
 				tentativePourTrouverLaCombinaisonDuJoueur();	
-				System.out.println("La partie est terminée ");
 				System.out.println();
 				System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous");
 				System.out.println();
