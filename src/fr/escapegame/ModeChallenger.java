@@ -5,10 +5,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 
 
 public class ModeChallenger extends ModeDeJeux  {
-	
 	
 	/**
 	 * @param introduction Méthode pour présenter le mode de jeu choisi
@@ -30,7 +31,7 @@ public class ModeChallenger extends ModeDeJeux  {
 	 * Activation ou non de la visibilité de la combinaison
 	 */
 
-	public void combinaisonAleatoire() {
+	public void combinaisonAleatoireIa() {
 		this.combinaison = new int[getNbCombinaison()];
 		for (int i = 0; i < getNbCombinaison(); i++) {
 			getCombinaison()[i] = (int) (Math.random() * 9);
@@ -43,10 +44,10 @@ public class ModeChallenger extends ModeDeJeux  {
 	 * @ param combinaisonVisible La méthode retourne la méthode combiAleatoire
 	 */
 	
-	public void combinaisonVisible() {
+	public void combinaisonVisibleIa() {
 		System.out.println("\n");
 		System.out.print("La combinaison à deviner est :" );
-		this.combiAleatoire();
+		this.combinaisonAleatoireIa();
 		
 	}
 	
@@ -74,7 +75,7 @@ public void saisieJoueur() {
 		String nb = scan.nextLine();
 		tab = nb.toCharArray();
 		System.out.println("Vous avez saisi: " + nb);
-		scan.close();
+		
 }	
 		
 		/**
@@ -119,7 +120,12 @@ public void tentativePourTrouverLaCombinaison() {
 			System.out.print("Bravo, vous avez trouvé la combinaison ");
 		} else if ( getSaisie() < getCombinaisonAleatoire() || getSaisie() > getCombinaisonAleatoire())
 			System.out.println("Vous n'avez pas trouvé la combinaison \n "  );
-		
+		if (messagePerteDuJoueur++ == nbEssai) 
+			{
+			System.out.print("Vous avez utilisé vos " + nbEssai +
+			" essais, vous avez perdu. la combinaison était ");
+		}
+	
 		
 	
 		nombreDeTours++;
@@ -129,16 +135,30 @@ public void tentativePourTrouverLaCombinaison() {
 
 }
 
+/** @param affichageDuResultat
+ * Méthode qui affiche le résultat de la combinaison aléatoire à la 
+ * fin de la partie
+ */
+
+	public void affichageDuResultat() {
+		tentativePourTrouverLaCombinaison();
+		for (int z = 0; z < combinaison.length; z++)
+			System.out.print(combinaison[z]);
+			System.out.print(".");
+			System.out.println("\n");
+		
+		
+	}
+
 /**
  * @ propositionApresUneFinDePartie Méthode proposant plusieurs choix après la
  * fin d'une partie
  */
 
 public void propositionApresUneFinDePartie() {
-	tentativePourTrouverLaCombinaison();	
-	System.out.println("La partie est terminée ");
+	affichageDuResultat();	
 	System.out.println();
-	System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous");
+	System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous:");
 	System.out.println();
 	System.out.println("1- Recommencer une partie ");
 	System.out.println("2- Changer de mode de jeu");
@@ -160,7 +180,7 @@ public void choixApresUneFinDePartie() {
 		case 1:
 			System.out.println("La partie va recommencer ");
 			introduction();
-			combinaisonVisible();
+			combinaisonVisibleIa();
 			choixApresUneFinDePartie();
 			break;
 
@@ -182,7 +202,7 @@ public void choixApresUneFinDePartie() {
 	} catch (InputMismatchException e) {
 		System.out.println("Erreur de saisie, recommence");
 		choixApresUneFinDePartie();
-		sc.close();
+		
 	}
 	 
 
@@ -190,7 +210,7 @@ public void choixApresUneFinDePartie() {
 		
 	public void jouer() {
 		introduction();
-		combinaisonVisible();
+		combinaisonVisibleIa();
 		choixApresUneFinDePartie();
 
 	}
