@@ -32,7 +32,7 @@ public class ModeChallenger extends ModeDeJeux  {
 	 */
 
 	public void combinaisonAleatoireIa() {
-		this.combinaison = new int[getNbCombinaison()];
+		this.combinaisonIa = new int[getNbCombinaison()];
 		for (int i = 0; i < getNbCombinaison(); i++) {
 			getCombinaison()[i] = (int) (Math.random() * 9);
 			if (getModeDev() == true) {
@@ -76,6 +76,7 @@ public void saisieJoueur() {
 		tab = nb.toCharArray();
 		System.out.println("Vous avez saisi: " + nb);
 		
+		
 }	
 		
 		/**
@@ -87,11 +88,11 @@ public void comparaisonDeCombinaison() {
 	saisieJoueur();
 	System.out.println("Le resultat est le suivant");
 	for (int k = 0; k < tab.length; k++) {
-		setSaisie(Integer.parseInt(String.valueOf(tab[k])));
-		setCombinaisonAleatoire( combinaison[k]);
-		if (getSaisie() == getCombinaisonAleatoire()) {
+		setSaisieJoueur(Integer.parseInt(String.valueOf(tab[k])));
+		setCombinaisonAleatoire( combinaisonIa[k]);
+		if (getSaisieJoueur() == getCombinaisonAleatoire()) {
 			System.out.print("=");
-		} else if (getSaisie() < getCombinaisonAleatoire()) {
+		} else if (getSaisieJoueur() < getCombinaisonAleatoire()) {
 			System.out.print("-");
 		} else {
 			System.out.print("+");
@@ -111,14 +112,13 @@ public void comparaisonDeCombinaison() {
 
 
 public void tentativePourTrouverLaCombinaison() {
-
 	do {
 		comparaisonDeCombinaison();
 
 		System.out.println();
-		if (getSaisie() == getCombinaisonAleatoire()) {
+		if (getSaisieJoueur() == getCombinaisonAleatoire()) {
 			System.out.print("Vous avez gagné, vous avez trouvé la combinaison ");
-		} else if ( getSaisie() < getCombinaisonAleatoire() || getSaisie() > getCombinaisonAleatoire())
+		} else if ( getSaisieJoueur() < getCombinaisonAleatoire() || getSaisieJoueur() > getCombinaisonAleatoire())
 			System.out.println("Vous n'avez pas trouvé la combinaison \n "  );
 		if (messagePerteDuJoueur++ == nbEssai) 
 			{
@@ -130,10 +130,9 @@ public void tentativePourTrouverLaCombinaison() {
 	
 		nombreDeTours++;
 
-	} while (getSaisie() != getCombinaisonAleatoire() && nombreDeTours != nbEssai);
-	
+	} while (getSaisieJoueur() != getCombinaisonAleatoire() && nombreDeTours != nbEssai);
+}	
 
-}
 
 /** @param affichageDuResultat
  * Méthode qui affiche le résultat de la combinaison aléatoire à la 
@@ -142,8 +141,8 @@ public void tentativePourTrouverLaCombinaison() {
 
 	public void affichageDuResultat() {
 		tentativePourTrouverLaCombinaison();
-		for (int z = 0; z < combinaison.length; z++)
-			System.out.print(combinaison[z]);
+		for (int z = 0; z < combinaisonIa.length; z++)
+			System.out.print(combinaisonIa[z]);
 			System.out.print(".");
 			System.out.println("\n");
 		
@@ -179,9 +178,10 @@ public void choixApresUneFinDePartie() {
 		switch (nbMode) {
 		case 1:
 			System.out.println("La partie va recommencer ");
-			introduction();
+			jouer();
+			/**introduction();
 			combinaisonVisibleIa();
-			choixApresUneFinDePartie();
+			choixApresUneFinDePartie();*/
 			break;
 
 		case 2:
