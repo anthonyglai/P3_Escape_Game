@@ -37,14 +37,15 @@ public class ModeDefenseur extends ModeDeJeux {
 				System.out.println("\n");
 				System.out.print("Ta combinaison est :");
 				this.combinaisonAleatoireJoueur();	
+				System.out.println("\n");
 		}
 			
 			public void combinaisonAleatoireIa() {
-				this.combinaison = new int[getNbCombinaison()];
+				this.combinaisonIa = new int[getNbCombinaison()];
 				for (int i = 0; i < getNbCombinaison(); i++) {
-					combinaison[i] = (int) (Math.random() * 9);
+					combinaisonIa[i] = (int) (Math.random() * 9);
 					if (getModeDev() == true) {
-						System.out.print(combinaison[i]);
+						System.out.print(combinaisonIa[i]);
 
 					}
 				}
@@ -63,10 +64,10 @@ public class ModeDefenseur extends ModeDeJeux {
 			
 			public void comparaisonDeCombinaisonIAetJoueur() {
 				System.out.println("\n");
-				for(int i=0; i< combinaison.length && i <combinaisonJoueur.length;i++){
-					  if(combinaison[i]==combinaisonJoueur[i]){
+				for(int i=0; i< combinaisonIa.length && i <combinaisonJoueur.length;i++){
+					  if(combinaisonIa[i]==combinaisonJoueur[i]){
 						  System.out.print("=");  
-					  } else if (combinaison[i] < combinaisonJoueur[i]) {
+					  } else if (combinaisonIa[i] < combinaisonJoueur[i]) {
 						  System.out.print("+");
 						} else {
 							System.out.print("-");
@@ -83,7 +84,7 @@ public class ModeDefenseur extends ModeDeJeux {
 					comparaisonDeCombinaisonIAetJoueur();
 
 					System.out.println();
-					if (combinaison == combinaisonJoueur) {
+					if (combinaisonIa == combinaisonJoueur) {
 						System.out.print("Bravo, l'IA a trouvé le résultat ");
 					} else  
 						System.out.println("L'IA n'a pas trouvé le résultat \n "  );
@@ -95,7 +96,7 @@ public class ModeDefenseur extends ModeDeJeux {
 				
 					nombreDeTours++;
 
-				} while (combinaison != combinaisonJoueur && nombreDeTours != nbEssai);
+				} while (combinaisonIa != combinaisonJoueur && nombreDeTours != nbEssai);
 				
 
 			}
@@ -121,9 +122,7 @@ public class ModeDefenseur extends ModeDeJeux {
 					switch (nbMode) {
 					case 1:
 						System.out.println("La partie va recommencer ");
-						introduction();
-						combinaisonVisibleJoueur();
-						choixApresUneFinDePartie();
+						jouer();
 						break;
 
 					case 2:
@@ -136,7 +135,7 @@ public class ModeDefenseur extends ModeDeJeux {
 						System.exit(0);
 						break;
 					default:
-						System.out.println("Recommence ta saisie il n y a que 4 possibilité :");
+						System.out.println("Recommence ta saisie il n y a que 4 possibilités :");
 						choixApresUneFinDePartie();
 						break;
 					}
