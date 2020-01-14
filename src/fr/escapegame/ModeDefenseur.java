@@ -86,7 +86,6 @@ public class ModeDefenseur extends ModeDeJeux {
             System.out.println("Essai n°" + getChanceUtilisee() + " pour l'IA");
             combinaisonVisibleIa();
             comparaisonDeCombinaisonIAetJoueur();
-
             System.out.println();
             if (getCombinaisonIa() == combinaisonJoueur) {
                 System.out.print("Bravo, l'IA a trouvé le résultat ");
@@ -115,6 +114,8 @@ public class ModeDefenseur extends ModeDeJeux {
     public void choixApresUneFinDePartie() {
         Scanner sc = new Scanner(System.in);
         propositionApresUneFinDePartie();
+        resetChanceUtilisee();
+        resetNbTour();
         try {
             int nbMode = sc.nextInt();
             switch (nbMode) {
