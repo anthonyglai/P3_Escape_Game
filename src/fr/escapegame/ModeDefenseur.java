@@ -94,10 +94,17 @@ public class ModeDefenseur extends ModeDeJeux {
             } else {
                 System.out.print("-");
 
-            }
-        }
-    }
+            }}}
+    
 
+     
+
+        public void resulat() {
+            System.out.println("\n");
+            System.out.print("Le résultat est le suivant");
+            comparaisonDeCombinaisonIAetJoueur();
+        }
+    
     /**
      * La methode indique au joueur si l IA a gagnee, n a pas trouvee le resultat ou
      * si elle a perdu
@@ -112,7 +119,7 @@ public class ModeDefenseur extends ModeDeJeux {
             setNombreDeTours(getNombreDeTours() + 1);
             System.out.println("Essai n°" + getChanceUtilisee() + " pour l'IA");
             combinaisonVisibleIa();
-            comparaisonDeCombinaisonIAetJoueur();
+            resulat();
             System.out.println();
             if (getCombinaisonIa() == getCombinaisonJoueur()) {
                 System.out.print("Bravo, l'IA a trouvé le résultat ");
@@ -185,8 +192,10 @@ public class ModeDefenseur extends ModeDeJeux {
 
     public void jouer() {
         introduction();
+        
         combinaisonVisibleJoueur();
         choixApresUneFinDePartie();
+       /* rand();*/
 
     }
 }
