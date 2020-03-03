@@ -1,18 +1,23 @@
 package fr.escapegame;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import fr.escapegame.propriete.ChargerPropriete;
 
 public class ModeDefenseur extends ModeDeJeux {
-    
-    
+
+    // * VARIABLE MODE DEFENSEUR
+
+    public String combiIaConvertiEnString = "";
+    char[] combiIaTab;
+
     /**
      * Methode d introduction au mode defenseur
      */
-   
+
     public void introduction() {
         System.out.println("\n");
         System.out.println("Bienvenue dans le mode defenseur.");
@@ -22,7 +27,6 @@ public class ModeDefenseur extends ModeDeJeux {
 
     }
 
-     
     /**
      * La methode creee une combinaison aleatoire pour l IA entre 0 et 9 chiffres.
      * Mode defenseur La variable nbCombinaison determinera le nombre de chiffre que
@@ -35,10 +39,11 @@ public class ModeDefenseur extends ModeDeJeux {
             combinaisonIaAtt[i] = (int) (Math.random() * 9);
 
             System.out.print(combinaisonIaAtt[i]);
+            combiIaConvertiEnString += combinaisonIaAtt[i];
 
         }
     }
-   
+
     /**
      * Méthode qui affiche la combinaison aleatoire de l IA Mode defenseur
      */
@@ -48,15 +53,14 @@ public class ModeDefenseur extends ModeDeJeux {
         System.out.println("Essai n° 1");
         System.out.print("l'IA propose la combinaison :");
         this.creationCombinaisonAleatoireIa();
-        
-        
+
     }
-    
+
     /**
-     * Methode pour que le joueur saisisse une combinaison 
-     * de x chiffres en du parametrage de la variable nbCombinaison
+     * Methode pour que le joueur saisisse une combinaison de x chiffres en du
+     * parametrage de la variable nbCombinaison
      */
-    
+
     public void saisieCombinaisonSecreteJoueur() {
         System.out.println("\n");
         Scanner scanner = new Scanner(System.in);
@@ -77,12 +81,10 @@ public class ModeDefenseur extends ModeDeJeux {
 
     }
 
-    
     /**
-     * Cette methode compare la combinaison aleatoire de l IA  a la 
-     * combinaison secrete du joueur et affiche un resultat
+     * Cette methode compare la combinaison aleatoire de l IA a la combinaison
+     * secrete du joueur et affiche un resultat
      */
-    
 
     public void comparaisonDeCombinaisonPourIa() {
 
@@ -91,8 +93,6 @@ public class ModeDefenseur extends ModeDeJeux {
         for (int k = 0; k < tabDef.length; k++) {
             saisieJoueurDef = Integer.parseInt(String.valueOf(tabDef[k]));
             combinaisonAleatoireIaAtt = combinaisonIaAtt[k];
-            // * setSaisieJoueur(Integer.parseInt(String.valueOf(getTab()[k])));
-            // * setCombinaisonAleatoire(getCombinaisonIa()[k]);
             if (combinaisonAleatoireIaAtt == saisieJoueurDef) {
                 resultat += ("=");
             } else if (combinaisonAleatoireIaAtt > saisieJoueurDef) {
@@ -105,12 +105,10 @@ public class ModeDefenseur extends ModeDeJeux {
         }
         System.out.println(resultat);
     }
-    
-    
+
     /**
      * Methode affichant que l Ia a trouve ou non la combinaison du joueur
      */
-    
 
     public void resultat() {
         if (combinaisonAleatoireIaAtt == saisieJoueurDef) {
@@ -122,108 +120,109 @@ public class ModeDefenseur extends ModeDeJeux {
 
     }
 
+    public void nouveauTourPourIa() {
 
-    
-    public void nouveauTourPourIa() {   
-        
         System.out.println("\n");
         System.out.println("Essai n° " + chanceUtiliseeIa++ + " pour l'Ia");
     }
-    
+
+    public int generationNbreAletoire(int min, int max) {
+        if (min == max)
+            return min;
+        
+        Random random = new Random();
+        return min + random.nextInt(max - min);
+
+    }
+
     public void generationNouvelleCombinaisonIa() {
         nouvelleCombinaisonIa = "";
+        combiIaTab =  nouvelleCombinaisonIa.toCharArray() ;
 
         char[] resultatDansTab = new char[resultat.length()];
-        char[] combiJoueurDansTab = new char[combinaisonSecreteJoueur.length()];
+        // * char[] combiJoueurDansTab = new char[combinaisonSecreteJoueur.length()];
+        combiIaTab  = new char[combiIaConvertiEnString.length()];
         for (int i = 0; i < resultat.length(); i++) {
             resultatDansTab[i] = resultat.charAt(i);
-            combiJoueurDansTab[i] = combinaisonSecreteJoueur.charAt(i);
+            // * combiJoueurDansTab[i] = combinaisonSecreteJoueur.charAt(i);
+            combiIaTab[i] += combiIaConvertiEnString.charAt(i);
 
         }
 
         for (int i = 0; i < resultatDansTab.length; i++) {
             // System.out.println(Character.toString(resultatTab[i]).equals("+"));
             if (Character.toString(resultatDansTab[i]).equals("+")) {
-                /**
-                 * System.out.println("superieur"); System.out.println(combinaisonTab[i]);
-                 */
-                nouvelleCombinaisonIa += (Character.getNumericValue(combiJoueurDansTab[i] + 1
-                        + (int) (Math.random() * (9 - (Character.getNumericValue(combiJoueurDansTab[i] + 1))))));
-
+                nouvelleCombinaisonIa += this.generationNbreAletoire(Character.getNumericValue(combiIaTab[i]),9); 
+                
             } else if (Character.toString(resultatDansTab[i]).equals("-")) {
-                /**
-                 * System.out.println("inferieur"); System.out.println(combinaisonTab[i]);
-                 */
-                nouvelleCombinaisonIa += (Character.getNumericValue(combiJoueurDansTab[i] - 1
-                        - (int) (Math.random() * (Character.getNumericValue(combiJoueurDansTab[i] - 0)))));
+
+                nouvelleCombinaisonIa += this.generationNbreAletoire(0 ,Character.getNumericValue( combiIaTab[i])); 
+
             } else {
-                /** System.out.print("egalite "); */
-                nouvelleCombinaisonIa += (combiJoueurDansTab[i]);
+
+                nouvelleCombinaisonIa += (combiIaTab[i]);
 
             }
         }
+
     }
-    
-    
+
     public void nouvelleCombinaisonIa() {
         System.out.println("L'IA propose la nouvelle combinaison " + nouvelleCombinaisonIa);
+
     }
-    
-    
+
     public void saisieOperateur() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir le résultat sous forme d'opérateur");
-        String resultat = sc.nextLine();
+        String result = sc.nextLine();
+        resultat = result;
         System.out.println("Vous avez saisi " + resultat);
 
     }
+
     public void nouvearesultat() {
         if (nouvelleCombinaisonIa == combinaisonSecreteJoueur) {
             System.out.println("L'IA a trouvé la combinaison du joueur");
-        } else if (nouvelleCombinaisonIa  != combinaisonSecreteJoueur) {
+        } else if (nouvelleCombinaisonIa != combinaisonSecreteJoueur) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur ");
         }
     }
-    
-    
+
     /**
-     * Methode regroupant les methodes ci-dessus dans une boucle do While 
-     * qui bouclera tant que la combinaison aleatoire de l IA est differente de la combinaison secrete du joueur
-     * et tant que la nouvelle combinaison de l IA est differente de la combinasion secrete du joueur
-     * et tant que le nombre de tour est different du nombre d essai parametre
+     * Methode regroupant les methodes ci-dessus dans une boucle do While qui
+     * bouclera tant que la combinaison aleatoire de l IA est differente de la
+     * combinaison secrete du joueur et tant que la nouvelle combinaison de l IA est
+     * differente de la combinasion secrete du joueur et tant que le nombre de tour
+     * est different du nombre d essai parametre
      */
-    
-    
-    
-    public void tentativePourTrouverLaCombinaisonDuJoueur()  {
+
+    public void tentativePourTrouverLaCombinaisonDuJoueur() {
         introduction();
         saisieCombinaisonSecreteJoueur();
         propositionCombinaisonIa();
         comparaisonDeCombinaisonPourIa();
-        resultat(); 
-        do {   
-      //* nbEssai;
-       nouveauTourPourIa();
-       generationNouvelleCombinaisonIa();
-       nouvelleCombinaisonIa();
-       saisieOperateur();
-       nouvearesultat();
+        resultat();
+        do {
+            // * nbEssai;
+            nouveauTourPourIa();
+            generationNouvelleCombinaisonIa();
+            nouvelleCombinaisonIa();
+            saisieOperateur();
+            nouvearesultat();
             nbretrs++;
-            
-     //*       System.out.println(chanceUtiliseeIa);
-     //*       System.out.println(getChanceUtiliseeJoueur());
-       
 
-      } while (combinaisonAleatoireIaAtt != saisieJoueurDef && nouvelleCombinaisonIa != combinaisonSecreteJoueur && nbretrs != nbEssai );
-       
-}  
-  
+        } while (combinaisonAleatoireIaAtt != saisieJoueurDef && nouvelleCombinaisonIa != combinaisonSecreteJoueur
+                && nbretrs != nbEssai);
+
+    }
+
     /**
      * Methode affichant si l Ia a gagnee ou perdue
      */
-  
-    
+
     public void victoireOuDefaite() {
+        tentativePourTrouverLaCombinaisonDuJoueur();
         if (nouvelleCombinaisonIa == combinaisonSecreteJoueur) {
             System.out.println("Victoire pour l'IA");
         } else {
@@ -231,15 +230,14 @@ public class ModeDefenseur extends ModeDeJeux {
         }
 
     }
-    
-    
+
     /**
      * Methode demandant au joueur de saisir si il souhaite recommencer changer ou
      * quitter le jeu
      */
-    
-    
+
     public void propositionApresUneFinDePartie() {
+        victoireOuDefaite();
         System.out.println();
         System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous:");
         System.out.println();
@@ -248,6 +246,8 @@ public class ModeDefenseur extends ModeDeJeux {
         System.out.println("3- Quitter le jeu");
 
     }
+    
+   
 
     /**
      * Methode qui permet au joueur en fonction du choix proposé et de sa saisie de
@@ -257,17 +257,16 @@ public class ModeDefenseur extends ModeDeJeux {
     public void choixApresUneFinDePartie() {
         Scanner sc = new Scanner(System.in);
         propositionApresUneFinDePartie();
-        resetChanceUtiliseeIa();
-        resetnbTours();
-        resetResultat();
-        resetnouvelleCombinaisonIa();  
-        resetcombinaisonSecrete();
+      resetChanceUtiliseeIa();
+      resetnbTours();
+      resetResultat();
+      resetnouvelleCombinaisonIa();
+      resetcombinaisonSecrete();
         try {
             int nbMode = sc.nextInt();
             switch (nbMode) {
             case 1:
                 System.out.println("La partie va recommencer ");
-                tentativePourTrouverLaCombinaisonDuJoueur();
                 choixApresUneFinDePartie();
 
                 break;
@@ -294,12 +293,9 @@ public class ModeDefenseur extends ModeDeJeux {
         }
 
     }
-    
-    
+
     public void jouer() {
-      
-        tentativePourTrouverLaCombinaisonDuJoueur();
-        victoireOuDefaite();
+
         choixApresUneFinDePartie();
     }
 
