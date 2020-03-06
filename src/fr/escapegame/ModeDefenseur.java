@@ -40,8 +40,11 @@ public class ModeDefenseur extends ModeDeJeux {
 
             System.out.print(combinaisonIaAtt[i]);
             combiIaConvertiEnString += combinaisonIaAtt[i];
+           
 
         }
+        System.out.println("\n");
+        System.out.println("test " + combiIaConvertiEnString);
     }
 
     /**
@@ -132,43 +135,55 @@ public class ModeDefenseur extends ModeDeJeux {
         
         Random random = new Random();
         return min + random.nextInt(max - min);
-
+        
+       
     }
-
+ 
+    
     public void generationNouvelleCombinaisonIa() {
         nouvelleCombinaisonIa = "";
-        combiIaTab =  nouvelleCombinaisonIa.toCharArray() ;
-
+        
+  
         char[] resultatDansTab = new char[resultat.length()];
-        // * char[] combiJoueurDansTab = new char[combinaisonSecreteJoueur.length()];
         combiIaTab  = new char[combiIaConvertiEnString.length()];
         for (int i = 0; i < resultat.length(); i++) {
             resultatDansTab[i] = resultat.charAt(i);
-            // * combiJoueurDansTab[i] = combinaisonSecreteJoueur.charAt(i);
             combiIaTab[i] += combiIaConvertiEnString.charAt(i);
+            //*   System.out.println(resultatDansTab[i]);
+            //*  System.out.println(combiIaTab[i]);
+            
 
         }
-
+        System.out.println("-----------------------------------------------------");
         for (int i = 0; i < resultatDansTab.length; i++) {
             // System.out.println(Character.toString(resultatTab[i]).equals("+"));
             if (Character.toString(resultatDansTab[i]).equals("+")) {
                 nouvelleCombinaisonIa += this.generationNbreAletoire(Character.getNumericValue(combiIaTab[i]),9); 
                 
+              //*  System.out.println("test resultat (if +):  " + resultatDansTab[i]);
+             //*   System.out.println("test combinaisonIa (if):  " + combiIaTab[i]);
+                
             } else if (Character.toString(resultatDansTab[i]).equals("-")) {
+                
+                //*    System.out.println("test resultat (else if -) :  " + resultatDansTab[i]);
+                //*    System.out.println("test combinaisonIa (else if):  " + combiIaTab[i]);
 
                 nouvelleCombinaisonIa += this.generationNbreAletoire(0 ,Character.getNumericValue( combiIaTab[i])); 
 
             } else {
 
-                nouvelleCombinaisonIa += (combiIaTab[i]);
-
-            }
+                
+                nouvelleCombinaisonIa += (Character.getNumericValue(combiIaTab[i]));
+                //*     System.out.println("test resultat (else =) :  " + resultatDansTab[i]);
+                //*    System.out.println("test combinaisonIa (else):  " + combiIaTab[i]);
+  
         }
-
-    }
-
+        }}
+    
+  
     public void nouvelleCombinaisonIa() {
         System.out.println("L'IA propose la nouvelle combinaison " + nouvelleCombinaisonIa);
+        combiIaConvertiEnString =  nouvelleCombinaisonIa ;
 
     }
 
@@ -176,9 +191,10 @@ public class ModeDefenseur extends ModeDeJeux {
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir le résultat sous forme d'opérateur");
         String result = sc.nextLine();
+        System.out.println("Vous avez saisi " + result);
         resultat = result;
-        System.out.println("Vous avez saisi " + resultat);
-
+        
+       
     }
 
     public void nouvearesultat() {
