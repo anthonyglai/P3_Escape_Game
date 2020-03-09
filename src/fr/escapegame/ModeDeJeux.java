@@ -1,6 +1,7 @@
 package fr.escapegame;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import fr.escapegame.propriete.ChargerPropriete;
@@ -14,40 +15,42 @@ import fr.escapegame.propriete.ChargerPropriete;
  */
 public abstract class ModeDeJeux {
 
-    
+  //* Variable du fichier de propriete
 
-    public Boolean modeDev = ChargerPropriete.MODE_DEV;
-    public int nbCombinaison = ChargerPropriete.NB_COMBINAISON;
-    public int nbEssai = ChargerPropriete.NB_ESSAI;
+    private Boolean modeDev = ChargerPropriete.MODE_DEV;
+    private int nbCombinaison = ChargerPropriete.NB_COMBINAISON;
+    private int nbEssai = ChargerPropriete.NB_ESSAI;
    
- // Variable mode challenger
+ //* Variable mode challenger
     
-    public int[] combinaisonIa;
-    public char[] tab;
-    public int saisieJoueur = 0;
-    public int combinaisonAleatoire = 0;
-    public int nombreDeTours = 0;
-    public int chanceUtiliseeJoueur = 0;
-    public int messagePerteDuJoueur = 1;
-    public int[] combinaisonJoueur;
-    public int messagePerteIa = 1;
+    private int[] combinaisonIa;
+    private char[] tab;
+    private int saisieJoueur = 0;
+    private int combinaisonAleatoire = 0;
+    private int nombreDeTours = 0;
+    private int chanceUtiliseeJoueur = 0;
+    private int messagePerteDuJoueur = 1;
+    private int[] combinaisonJoueur;
+    private int messagePerteIa = 1;
     
    
-    //* VARIABLE MODE DEFENSEUR
+  //* Variable mode defenseur
     
-public String combinaisonSecreteJoueur = "";            
-public int[] combinaisonIaModedef;           
-public int combinaisonAleatoireIaAtt = 0;           
-public int chanceUtiliseeIa = 2;            
-public int combinaisonAleatoireModedef = 0;         
-public int[] combinaisonIaAtt;            
-public String combiJoueur = "";         
-public String resultat = "";            
-public String resetNouvelleCombi = "";          
-public int nbretrs = 1;         
-public String nouvelleCombinaisonIa = "";           
-public int saisieJoueurDef = 0;            
-public char[] tabDef;          
+    private String combinaisonSecreteJoueur = "";            
+    private int[] combinaisonIaModedef;           
+    private int combinaisonAleatoireIaAtt = 0;           
+    private int chanceUtiliseeIa = 2;            
+    private int combinaisonAleatoireModedef = 0;         
+    private int[] combinaisonIaAtt;            
+    private String combiJoueur = "";         
+    private  String resultat = "";            
+    private String resetNouvelleCombi = "";          
+    private int nbretrs = 1;         
+    private String nouvelleCombinaisonIa = "";           
+    private int saisieJoueurDef = 0;            
+    private char[] tabDef;  
+    private String combiIaConvertiEnString = "";
+    private char[] combiIaTab;
     
 
 
@@ -292,6 +295,24 @@ public char[] tabDef;
     }
     
     /**
+     * 
+     * @param min
+     * @param max
+     * @return
+     */
+    
+    public int generationNbreAletoire(int min, int max) {
+        if (min == max)
+            return min;
+
+        Random random = new Random();
+        return min + random.nextInt(max - min);
+    
+
+    
+    }
+
+    /**
      * Methode qui va generer une nouvelle combinaison aleatoire pour l IA 
      * en fonction du resultat precedent
      * Mode defenseur et mode duel
@@ -301,34 +322,28 @@ public char[] tabDef;
         nouvelleCombinaisonIa = "";
 
         char[] resultatDansTab = new char[resultat.length()];
-        char[] combiJoueurDansTab = new char[combinaisonSecreteJoueur.length()];
+        combiIaTab = new char[combiIaConvertiEnString.length()];
         for (int i = 0; i < resultat.length(); i++) {
             resultatDansTab[i] = resultat.charAt(i);
-            combiJoueurDansTab[i] = combinaisonSecreteJoueur.charAt(i);
-        }
+            combiIaTab[i] += combiIaConvertiEnString.charAt(i);
 
+        }
         for (int i = 0; i < resultatDansTab.length; i++) {
-            // System.out.println(Character.toString(resultatTab[i]).equals("+"));
             if (Character.toString(resultatDansTab[i]).equals("+")) {
-                /**
-                 * System.out.println("superieur"); System.out.println(combinaisonTab[i]);
-                 */
-                nouvelleCombinaisonIa += (Character.getNumericValue(combiJoueurDansTab[i] + 1
-                        + (int) (Math.random() * (9 - (Character.getNumericValue(combiJoueurDansTab[i] + 1))))));
+                nouvelleCombinaisonIa += this.generationNbreAletoire(Character.getNumericValue(combiIaTab[i]), 9);
 
             } else if (Character.toString(resultatDansTab[i]).equals("-")) {
-                /**
-                 * System.out.println("inferieur"); System.out.println(combinaisonTab[i]);
-                 */
-                nouvelleCombinaisonIa += (Character.getNumericValue(combiJoueurDansTab[i] - 1
-                        - (int) (Math.random() * (Character.getNumericValue(combiJoueurDansTab[i] - 0)))));
+
+                nouvelleCombinaisonIa += this.generationNbreAletoire(0, Character.getNumericValue(combiIaTab[i]));
+
             } else {
-                /** System.out.print("egalite "); */
-                nouvelleCombinaisonIa += (combiJoueurDansTab[i]);
+
+                nouvelleCombinaisonIa += (Character.getNumericValue(combiIaTab[i]));
 
             }
         }
     }
+
     
     /**
      * Methode affichant la nouvelle combinaison de l IA
@@ -337,6 +352,7 @@ public char[] tabDef;
     
     public void nouvelleCombinaisonIa() {
         System.out.println("L'IA propose la nouvelle combinaison " + nouvelleCombinaisonIa);
+        combiIaConvertiEnString = nouvelleCombinaisonIa;
     }
     
     /**
@@ -612,7 +628,7 @@ public char[] tabDef;
         return combinaisonIaModedef;
     }
 
-    public int getCombinaisonAleatoireIaDef() {
+    public int getCombinaisonAleatoireIaAtt() {
         return combinaisonAleatoireIaAtt;
     }
 
@@ -624,7 +640,7 @@ public char[] tabDef;
         return combinaisonAleatoireModedef;
     }
 
-    public int[] getCombinaisonIadef() {
+    public int[] getCombinaisonIaAtt() {
         return combinaisonIaAtt;
     }
 
@@ -654,6 +670,14 @@ public char[] tabDef;
 
     public char[] getTabDef() {
         return tabDef;
+    }
+
+    public String getCombiIaConvertiEnString() {
+        return combiIaConvertiEnString;
+    }
+
+    public char[] getCombiIaTab() {
+        return combiIaTab;
     }
 
     public void setModeDev(Boolean modeDev) {
@@ -712,8 +736,8 @@ public char[] tabDef;
         this.combinaisonIaModedef = combinaisonIaModedef;
     }
 
-    public void setCombinaisonAleatoireIaDef(int combinaisonAleatoireIaDef) {
-        this.combinaisonAleatoireIaAtt = combinaisonAleatoireIaDef;
+    public void setCombinaisonAleatoireIaAtt(int combinaisonAleatoireIaAtt) {
+        this.combinaisonAleatoireIaAtt = combinaisonAleatoireIaAtt;
     }
 
     public void setChanceUtiliseeIa(int chanceUtiliseeIa) {
@@ -724,8 +748,8 @@ public char[] tabDef;
         this.combinaisonAleatoireModedef = combinaisonAleatoireModedef;
     }
 
-    public void setCombinaisonIadef(int[] combinaisonIadef) {
-        this.combinaisonIaAtt = combinaisonIadef;
+    public void setCombinaisonIaAtt(int[] combinaisonIaAtt) {
+        this.combinaisonIaAtt = combinaisonIaAtt;
     }
 
     public void setCombiJoueur(String combiJoueur) {
@@ -754,4 +778,14 @@ public char[] tabDef;
 
     public void setTabDef(char[] tabDef) {
         this.tabDef = tabDef;
+    }
+
+    public void setCombiIaConvertiEnString(String combiIaConvertiEnString) {
+        this.combiIaConvertiEnString = combiIaConvertiEnString;
+    }
+
+    public void setCombiIaTab(char[] combiIaTab) {
+        this.combiIaTab = combiIaTab;
     }}
+
+   
