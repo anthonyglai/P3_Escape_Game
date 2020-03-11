@@ -338,10 +338,9 @@ public class ModeDuel extends ModeDeJeux {
            comparaisonDeCombinaison();
            resultatPourJoueur();
         
-          if (getCombinaisonAleatoireIaAtt() == getSaisieJoueurDef() && getSaisieJoueur() == getCombinaisonAleatoire()) {
-             propositionApresUneFinDePartie();
-          }
-             else { 
+          if (getCombinaisonAleatoireIaAtt() == getSaisieJoueurDef() || getSaisieJoueur() == getCombinaisonAleatoire()) {
+              choixApresUneFinDePartie();
+          } else   { 
            /* début de do */
            do {
            nouveauTourPourIa();
@@ -357,13 +356,11 @@ public class ModeDuel extends ModeDeJeux {
            setChanceUtiliseeIa(getChanceUtiliseeIa() + 1);
 
         } while ( getNouvelleCombinaisonIa() != getCombinaisonSecreteJoueur() && getSaisieJoueur() != getCombinaisonAleatoire() && getNbretrs() != getNbEssai());
-        }}
+        }
+          choixApresUneFinDePartie();
+    }
     
-    /**
-     * Methode demandant au joueur de saisir si il souhaite recommencer changer ou
-     * quitter le jeu
-     */
-
+    
     public void propositionApresUneFinDePartie() {
         
         System.out.println();
@@ -382,26 +379,26 @@ public class ModeDuel extends ModeDeJeux {
      */
     public void choixApresUneFinDePartie() {
         Scanner sc = new Scanner(System.in);
-        resetChanceUtiliseeJoueur();
-        resetNbTour();
+        propositionApresUneFinDePartie();
         resetChanceUtiliseeIa();
         resetnbTours();
         resetResultat();
         resetnouvelleCombinaisonIa();
         resetcombinaisonSecrete();
+        resetChanceUtiliseeJoueur();
+        resetNbTour();
         try {
             int nbMode = sc.nextInt();
             switch (nbMode) {
             case 1:
                 System.out.println("La partie va recommencer ");
                 TentativeDeTrouverLaCombinaisonEntreIaEtJoueur();
-                propositionApresUneFinDePartie();
                 choixApresUneFinDePartie();
 
                 break;
 
             case 2:
-                System.out.println("Retour à l'accueil pour choisir un mode de jeux");
+                System.out.println("Retour à l'acceuil pour choisir un mode de jeux");
                 Launcher retourALauncher = new Launcher();
                 retourALauncher.ModeDeJeux();
                 break;
@@ -418,7 +415,6 @@ public class ModeDuel extends ModeDeJeux {
         } catch (InputMismatchException e) {
             System.out.println("Erreur de saisie, recommence");
             choixApresUneFinDePartie();
-            
 
         }
 
@@ -429,8 +425,8 @@ public class ModeDuel extends ModeDeJeux {
     public void jouer() {
         
         TentativeDeTrouverLaCombinaisonEntreIaEtJoueur();
-        propositionApresUneFinDePartie();
         choixApresUneFinDePartie();
+        
       
        /* introduction();
      saisieCombinaisonSecreteJoueur();
