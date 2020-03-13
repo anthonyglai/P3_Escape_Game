@@ -53,9 +53,9 @@ public class ModeChallenger extends ModeDeJeux {
      * modeDev dans la methode combinaisonAleatoireIa est true
      */
 
-    public void combinaisonVisibleIa() {
+    public void combinaisonIaSecrete() {
         System.out.println("\n");
-        System.out.print("La combinaison à deviner est :");
+        System.out.print("La combinaison de l'IA à deviner est :");
         this.combinaisonAleatoireIa();
 
     }
@@ -95,16 +95,16 @@ public class ModeChallenger extends ModeDeJeux {
     public void comparaisonDeCombinaison() {
 
         saisieJoueur();
-        System.out.println("Le resultat est le suivant");
+        System.out.print("Le resultat est ");
         for (int k = 0; k < getTab().length; k++) {
             setSaisieJoueur(Integer.parseInt(String.valueOf(getTab()[k])));
             setCombinaisonAleatoire(getCombinaisonIa()[k]);
             if (getSaisieJoueur() == getCombinaisonAleatoire()) {
                 System.out.print("=");
             } else if (getSaisieJoueur() < getCombinaisonAleatoire()) {
-                System.out.print("-");
-            } else {
                 System.out.print("+");
+            } else {
+                System.out.print("-");
 
             }
 
@@ -143,17 +143,29 @@ public class ModeChallenger extends ModeDeJeux {
      * quand la partie est terminee
      */
 
-    public void affichageDeLaCombinaison() {
+  /*  public void affichageDeLaCombinaison() {
         setCombinaisonIa(getCombinaisonIa());
         tentativePourTrouverLaCombinaisonDeIa();
-        
+        System.out.println("\n");
+        System.out.print("La combinaison était ");
         for (int z = 0; z < getCombinaisonIa().length; z++)
             if (getSaisieJoueur() != getCombinaisonAleatoire())
             
             System.out.print(getCombinaisonIa()[z]);
-        System.out.print(".");
         System.out.println("\n");
 
+    }*/
+    
+    public void defaiteJoueur(){
+        tentativePourTrouverLaCombinaisonDeIa();
+        if (getSaisieJoueur() != getCombinaisonAleatoire()) {
+            System.out.print("Vous avez perdu, la combinaison était ");{
+                for (int z = 0; z < getCombinaisonIa().length; z++)
+                    if (getSaisieJoueur() != getCombinaisonAleatoire())
+                        System.out.print(getCombinaisonIa()[z]);
+                System.out.println("\n");
+            }
+        }
     }
 
     /**
@@ -162,7 +174,7 @@ public class ModeChallenger extends ModeDeJeux {
      */
 
     public void propositionApresUneFinDePartie() {
-        affichageDeLaCombinaison();
+        defaiteJoueur();
         System.out.println();
         System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous:");
         System.out.println();
@@ -188,13 +200,13 @@ public class ModeChallenger extends ModeDeJeux {
             case 1:
                 System.out.println("La partie va recommencer ");
                 introduction();
-                combinaisonVisibleIa();
+                combinaisonIaSecrete();
                 choixApresUneFinDePartie();
 
                 break;
 
             case 2:
-                System.out.println("Retour à l'acceuil pour choisir un mode de jeux");
+                System.out.println("Retour à l'accueil pour choisir un mode de jeux");
                 Launcher retourALauncher = new Launcher();
                 retourALauncher.ModeDeJeux();
                 break;
@@ -218,7 +230,7 @@ public class ModeChallenger extends ModeDeJeux {
 
     public void jouer() {
         introduction();
-        combinaisonVisibleIa();
+        combinaisonIaSecrete();
         choixApresUneFinDePartie();
 
     }
