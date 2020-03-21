@@ -106,7 +106,7 @@ public class ModeDefenseur extends ModeDeJeux {
      * Methode affichant que l Ia a trouve ou non la combinaison du joueur
      */
 
-    public void resultat() {
+    public void resultatPourIa() {
         if (getCombinaisonAleatoireIaAtt() == getSaisieJoueurDef()) {
             System.out.println("L'IA a trouvé la combinaison du joueur");
         } else if (getCombinaisonAleatoireIaAtt() > getSaisieJoueurDef()
@@ -206,11 +206,15 @@ public class ModeDefenseur extends ModeDeJeux {
      */
 
     public void nouvearesultat() {
-        if (getNouvelleCombinaisonIa() == getCombinaisonSecreteJoueur()) {
+        if (getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.println("L'IA a trouvé la combinaison du joueur");
-        } else if (getNouvelleCombinaisonIa() != getCombinaisonSecreteJoueur()) {
+            System.out.println("Victoire pour l'IA");
+            choixApresUneFinDePartie();
+        } else if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur ");
+
         }
+
     }
 
     /**
@@ -226,7 +230,11 @@ public class ModeDefenseur extends ModeDeJeux {
         saisieCombinaisonSecreteJoueur();
         propositionCombinaisonIa();
         comparaisonDeCombinaisonPourIa();
-        resultat();
+        resultatPourIa();
+        if(getCombinaisonAleatoireIaAtt() == getSaisieJoueurDef()) {
+            choixApresUneFinDePartie();
+        }
+        
         do {
 
             nouveauTourPourIa();
@@ -236,33 +244,26 @@ public class ModeDefenseur extends ModeDeJeux {
             nouvearesultat();
             setNbretrs(getNbretrs() + 1);
             setChanceUtiliseeIa(getChanceUtiliseeIa() + 1);
-
-        } while (getCombinaisonAleatoireIaAtt() != getSaisieJoueurDef()
-                && getNouvelleCombinaisonIa() != getCombinaisonSecreteJoueur() && getNbretrs() != getNbEssai());
-
+            getNbretrs();
+        }  while (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur()) && getNbretrs() != getNbEssai());
     }
 
     /**
-     * Methode affichant si l Ia a gagnee ou perdue
+     * Methode qui affiche quand l IA a perdu
      */
 
-    public void victoireOuDefaite() {
-        tentativePourTrouverLaCombinaisonDuJoueur();
-        if (getNouvelleCombinaisonIa() == getCombinaisonSecreteJoueur()) {
-            System.out.println("Victoire pour l'IA");
-        } else {
-            System.out.println("Défaite pour l'IA");
+    public void defaiteIa() {
+        if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
+            System.out.print("Défaite pour l IA");
         }
-
     }
-
-    /**
-     * Methode demandant au joueur de saisir si il souhaite recommencer changer ou
+    
+     /** Methode demandant au joueur de saisir si il souhaite recommencer changer ou
      * quitter le jeu
      */
 
     public void propositionApresUneFinDePartie() {
-        victoireOuDefaite();
+        defaiteIa();
         System.out.println();
         System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous:");
         System.out.println();
@@ -290,6 +291,7 @@ public class ModeDefenseur extends ModeDeJeux {
             switch (nbMode) {
             case 1:
                 System.out.println("La partie va recommencer ");
+                tentativePourTrouverLaCombinaisonDuJoueur();
                 choixApresUneFinDePartie();
 
                 break;
@@ -321,6 +323,7 @@ public class ModeDefenseur extends ModeDeJeux {
 
     public void jouer() {
 
+        tentativePourTrouverLaCombinaisonDuJoueur();
         choixApresUneFinDePartie();
     }
 
