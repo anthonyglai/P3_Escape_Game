@@ -13,18 +13,10 @@ import fr.escapegame.propriete.ChargerPropriete;
  * @author Glairon Anthony
  * @version 1.0
  */
-public class ModeDuel extends ModeDeJeux {                                 
-    public String resultat = "";
-    public String combinaisonSecreteJoueur = "";
-   //* public String nouvelleCombinaisonIa = "";
-    public int nbretrs = 1; // *saisieCombinaisonSecreteJoueur()
-    public String resetNouvelleCombi = "";
-    private int saisieJoueurDef = 0;
-
-    public int[] combinaisonIaAtt; // *creationCombinaisonAleatoireIa();
-    public int combinaisonAleatoireIaAtt = 0;
-    public int chanceUtiliseeIa =2;
-    private char[] tabDef; // *saisieCombinaisonSecreteJoueur()
+public class ModeDuel extends ModeDeJeux {    
+    
+    public String resultVictoire = "=";
+  
 
     public void introduction() {                                                        
         System.out.println("\n");
@@ -83,7 +75,7 @@ public class ModeDuel extends ModeDeJeux {
 
     public void combinaisonIaSecrete() {
         System.out.println("\n");
-        System.out.print("La combinaison de l'IA à deviner est :");
+        System.out.print("La combinaison de l'IA à deviner est ");
         this.combinaisonAleatoireIa();
 
     }
@@ -123,7 +115,7 @@ public class ModeDuel extends ModeDeJeux {
     public void propositionCombinaisonIa() {
         System.out.println("\n");
         System.out.println("Essai n° 1");
-        System.out.print("l'IA propose la combinaison :");
+        System.out.print("l'IA propose la combinaison ");
         this.creationCombinaisonAleatoireIa();
 
     }
@@ -136,7 +128,7 @@ public class ModeDuel extends ModeDeJeux {
     public void comparaisonDeCombinaisonPourIa() {
 
         System.out.println("\n");
-        System.out.print("Le resultat est le suivant ");
+        System.out.print("Le resultat est ");
         for (int k = 0; k < getTabDef().length; k++) {
             setSaisieJoueurDef(Integer.parseInt(String.valueOf(getTabDef()[k])));
             setCombinaisonAleatoireIaAtt(getCombinaisonIaAtt()[k]);
@@ -160,6 +152,7 @@ public class ModeDuel extends ModeDeJeux {
     public void resultatPourIa() {
         if (getCombinaisonAleatoireIaAtt() == getSaisieJoueurDef()) {
             System.out.println("L'IA a trouvé la combinaison du joueur");
+            choixApresUneFinDePartie();
         } else if (getCombinaisonAleatoireIaAtt() > getSaisieJoueurDef()
                 || getCombinaisonAleatoireIaAtt() < getSaisieJoueurDef()) {
             System.out.println("L'ia n'a pas trouvé la combinaison du joueur ");
@@ -199,7 +192,7 @@ public class ModeDuel extends ModeDeJeux {
 
         String nb = scan.nextLine();
         setTab(nb.toCharArray());
-        System.out.println("Vous avez saisi: " + nb);
+        System.out.println("Vous avez saisi " + nb);
 
     }
     
@@ -210,7 +203,7 @@ public class ModeDuel extends ModeDeJeux {
 
     public void comparaisonDeCombinaison() {
         
-        System.out.println("Le resultat est le suivant");
+        System.out.println("Le resultat est ");
         for (int k = 0; k < getTab().length; k++) {
             setSaisieJoueur(Integer.parseInt(String.valueOf(getTab()[k])));
             setCombinaisonAleatoire(getCombinaisonIa()[k]);
@@ -230,6 +223,7 @@ public class ModeDuel extends ModeDeJeux {
         System.out.println("\n");
         if (getSaisieJoueur() == getCombinaisonAleatoire()) {
             System.out.print("Vous avez gagné, vous avez trouvé la combinaison ");
+            choixApresUneFinDePartie();
         } else if (getSaisieJoueur() < getCombinaisonAleatoire() || getSaisieJoueur() > getCombinaisonAleatoire())
             System.out.println("Vous n'avez pas trouvé la combinaison \n ");
         
@@ -315,13 +309,22 @@ public class ModeDuel extends ModeDeJeux {
      */
 
     public void nouvearesultat() {
-        if (getNouvelleCombinaisonIa() == getCombinaisonSecreteJoueur()) {
+        if (getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.println("L'IA a trouvé la combinaison du joueur");
-        } else if (getNouvelleCombinaisonIa() != getCombinaisonSecreteJoueur()) {
+            System.out.println("Victoire pour l'IA");
+            choixApresUneFinDePartie();
+        } else if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur ");
+
+        }
+
+    }
+    
+    public void defaiteIaEtJoueur() {
+        if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())){
+            choixApresUneFinDePartie();
         }
     }
-
 
     
     public void TentativeDeTrouverLaCombinaisonEntreIaEtJoueur() {
@@ -333,33 +336,48 @@ public class ModeDuel extends ModeDeJeux {
            propositionCombinaisonIa();
            comparaisonDeCombinaisonPourIa();
            resultatPourIa();
+         
            tourJoueur();
            saisieJoueur();
            comparaisonDeCombinaison();
            resultatPourJoueur();
         
-          if (getCombinaisonAleatoireIaAtt() == getSaisieJoueurDef() || getSaisieJoueur() == getCombinaisonAleatoire()) {
-              choixApresUneFinDePartie();
-          } else   { 
-           /* début de do */
            do {
            nouveauTourPourIa();
            generationNouvelleCombinaisonIa();
            nouvelleCombinaisonIa();
            saisieOperateur();
-           nouvearesultat();
-           tourJoueur();
+           nouvearesultat();             
+           tourJoueur();                     
            saisieJoueur();
            comparaisonDeCombinaison();
            resultatPourJoueur(); 
            setNbretrs(getNbretrs() + 1);
            setChanceUtiliseeIa(getChanceUtiliseeIa() + 1);
+           getNbretrs();
+           
+           }  while (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur()) && getNbretrs() != getNbEssai());
+           }
 
-        } while ( getNouvelleCombinaisonIa() != getCombinaisonSecreteJoueur() && getSaisieJoueur() != getCombinaisonAleatoire() && getNbretrs() != getNbEssai());
-        }
-          choixApresUneFinDePartie();
-    }
+          
     
+    /**
+     * Methode qui affiche quand l IA a perdu
+     */
+
+    public void defaiteIa() {
+        if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
+            System.out.print("Défaite pour l IA");
+        }
+    }
+
+    
+
+    
+     /** Methode demandant au joueur de saisir si il souhaite recommencer changer ou
+     * quitter le jeu
+     */
+           
     
     public void propositionApresUneFinDePartie() {
         
@@ -428,17 +446,7 @@ public class ModeDuel extends ModeDeJeux {
         choixApresUneFinDePartie();
         
       
-       /* introduction();
-     saisieCombinaisonSecreteJoueur();
-       combinaisonIaSecrete(); 
-        tourIa();
-        propositionCombinaisonIa();
-        comparaisonDeCombinaisonPourIa();
-        resultatPourIa();
-        tourJoueur();
-        saisieJoueur();
-        comparaisonDeCombinaison();
-        resultatPourJoueur();*/
+   
     }
 
 }
