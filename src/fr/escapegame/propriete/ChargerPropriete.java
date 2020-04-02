@@ -3,7 +3,7 @@ package fr.escapegame.propriete;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
-import fr.escapegame.Launcher;
+
 
 public class ChargerPropriete {
 	
