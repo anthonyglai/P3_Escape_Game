@@ -235,68 +235,14 @@ import fr.escapegame.propriete.ChargerPropriete;
      * Methode qui affiche quand l IA a perdu
      */
     public void defaiteIa() {
+        tentativePourTrouverLaCombinaisonDuJoueur();
         if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.print("Défaite pour l IA\n");
         }
     }
     
-     /** Methode demandant au joueur de saisir si il souhaite recommencer changer ou
-     * quitter le jeu
-     */
-    public void propositionApresUneFinDePartie() {
-        defaiteIa();
-        System.out.println();
-        System.out.println("Pour poursuivre veuillez choisir entre les 3 modes ci-dessous:");
-        System.out.println();
-        System.out.println("1- Recommencer une partie ");
-        System.out.println("2- Changer de mode de jeu");
-        System.out.println("3- Quitter le jeu");
-    }
-
-    /**
-     * Methode qui permet au joueur en fonction du choix propose et de sa saisie de
-     * faire une nouvelle partie , de retourner dans le menu de selection des modes
-     * de jeux ou de sortir du jeu
-     */
-    public void choixApresUneFinDePartie() {
-        Scanner sc = new Scanner(System.in);
-        propositionApresUneFinDePartie();
-        resetChanceUtiliseeIa();
-        resetnbTours();
-        resetResultat();
-        resetnouvelleCombinaisonIa();
-        resetcombinaisonSecrete();
-        try {
-            int nbMode = sc.nextInt();
-            switch (nbMode) {
-            case 1:
-                System.out.println("La partie va recommencer.");
-                tentativePourTrouverLaCombinaisonDuJoueur();
-                choixApresUneFinDePartie();
-                break;
-            case 2:
-                System.out.println("Retour à l'acceuil pour choisir un mode de jeux.");
-                Launcher retourALauncher = new Launcher();
-                retourALauncher.ModeDeJeux();
-                break;
-            case 3:
-                System.out.println("fin de partie.");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Recommencez votre saisie il n y a que 4 possibilité.");
-                choixApresUneFinDePartie();
-                break;
-            }
-        } catch (InputMismatchException e) {
-            System.out.println("Erreur de saisie, veuillez recommencer.");
-            choixApresUneFinDePartie();
-        }
-    }
-
     /** Methode generant le deroulement du jeu */
     public void jouer() {
         tentativePourTrouverLaCombinaisonDuJoueur();
-        choixApresUneFinDePartie();
     }
 }

@@ -136,63 +136,12 @@ public class ModeChallenger extends ModeDeJeux {
         }
     }
 
-    /**
-     * Methode demandant au joueur de saisir si il souhaite recommencer changer ou
-     * quitter le jeu
-     */
-    public void propositionApresUneFinDePartie() {
-        defaiteJoueur();
-        System.out.println("\n");
-        System.out.println("Pour poursuivre, veuillez choisir entre les 3 modes ci-dessous:");
-        System.out.println();
-        System.out.println("1- Recommencer une partie ");
-        System.out.println("2- Changer de mode de jeu");
-        System.out.println("3- Quitter le jeu");
-    }
-
-    /**
-     * Methode qui permet au joueur en fonction du choix propose et de sa saisie de
-     * faire une nouvelle partie de retourner dans le menu de selection des modes
-     * de jeux ou de sortir du jeu
-     */
-    public void choixApresUneFinDePartie() {
-        Scanner sc = new Scanner(System.in);
-        propositionApresUneFinDePartie();
-        resetChanceUtiliseeJoueur();
-        resetNbTour();
-        try {
-            int nbMode = sc.nextInt();
-            switch (nbMode) {
-            case 1:
-                System.out.println("La partie va recommencer\n");
-                introduction();
-                combinaisonIaSecrete();
-                choixApresUneFinDePartie();
-                break;
-            case 2:
-                System.out.println("Retour à l'accueil pour choisir un autre mode de jeux\n");
-                Launcher retourALauncher = new Launcher();
-                retourALauncher.ModeDeJeux();
-                break;
-            case 3:
-                System.out.println("fin de partie");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Recommencez votre saisie il n y a que 4 possibilité\n");
-                choixApresUneFinDePartie();
-                break;
-            }
-        } catch (InputMismatchException e) {
-            System.out.println("Erreur de saisie, recommence\n");
-            choixApresUneFinDePartie();
-        }
-    }
+   
     
     /** Methode generant le deroulement du jeu */
     public void jouer() {
         introduction();
         combinaisonIaSecrete();
-        choixApresUneFinDePartie();
+        defaiteJoueur();
     }
 }
