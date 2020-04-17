@@ -13,24 +13,39 @@ import org.apache.log4j.Logger;
  */
 
 public class ModeChallenger extends ModeDeJeux {
-    public static final Logger LOGGER = Logger.getLogger(Launcher.class);
+
+   public void tentativePourTrouverLaCombinaisonDeIa() {
+        do {
+            comparaisonDeCombinaison();
+            if (saisieJoueur == combinaisonAleatoire) {
+                System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA\n");
+            } else if (saisieJoueur < combinaisonAleatoire || saisieJoueur > combinaisonAleatoire) {
+                System.out.println("Vous n'avez pas trouvé la combinaison de l' IA\n");
+            }
+            nombreDeTours++;
+        } while (saisieJoueur != combinaisonAleatoire && nombreDeTours != nbEssai);
+        if (saisieJoueur != combinaisonAleatoire) {
+            System.out.print("Vous avez perdu, la combinaison de l' IA est ");
+        }
+        for (int z = 0; z < combinaisonIa.length; z++) {
+            if (saisieJoueur != combinaisonAleatoire) {
+                System.out.print(combinaisonIa[z]);
+            }
+        }
+    }
 
     public void jouer() {
 
-        /**
-         * La methode affiche ou non la combinaison aleatoire de l IA si la variable
-         * modeDev dans la methode combinaisonAleatoireIa est true Mode challenger et
-         * mode duel
-         */
+
         this.combinaisonIaSecrete();
 
         /**
          * Methode retournant au joueur en fonction de sa saisie si il a trouve ou non
          * la combinaison Cette methode est repetee tant que le joueur trouve un
          * resultat different de la combinaison de l IA et dans la limite du nombre d
-         * essai mode chalenger et duel
+         * essai Si le nombre d'essai est depasse un message de defaite avec la
+         * combinaison de l Ia s affiche
          */
-        this.messageFinDePartie();
-
+        this.tentativePourTrouverLaCombinaisonDeIa();
     }
 }
