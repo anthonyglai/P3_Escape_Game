@@ -52,6 +52,8 @@ public abstract class ModeDeJeux {
     public char[] tabDef;
     public String combiIaConvertiEnString = "";
     public char[] combiIaTab;
+    
+    public Integer selected = null;
 
     /**
      * La methode genere une combinaison aleatoire pour l IA entre 0 et 9 chiffres.
@@ -205,6 +207,8 @@ public abstract class ModeDeJeux {
     public void resultatPourIa() {
         if (combinaisonAleatoireIaAtt == saisieJoueurDef) {
             System.out.println("Victoire de l IA, la combinaison a été devinée ");
+            Launcher finDePartie = new Launcher();
+            finDePartie.choixApresUneFinDePartie(); 
         } else if (combinaisonAleatoireIaAtt > saisieJoueurDef || combinaisonAleatoireIaAtt < saisieJoueurDef) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur");
         }
@@ -215,6 +219,7 @@ public abstract class ModeDeJeux {
      */
     public void resultatPourJoueur() {
         System.out.println("\n");
+        System.out.println("test1 sur resultat joueur " + selected   );
         if (getSaisieJoueur() == getCombinaisonAleatoire()) {
             System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA\n ");
             Launcher finDePartie = new Launcher();
@@ -308,7 +313,7 @@ public abstract class ModeDeJeux {
      * Methode affichant si l' IA a trouvee ou non la combinaison du joueur Mode
      * defenseur et mode duel
      */
-   /*public void nouvearesultat() {
+   public void nouvearesultat() {
         toursIa++;
         if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && (toursIa == nbEssai)) {
             System.out.print("Défaite pour l IA, elle n'a pas trouvé la combinaison du joueur");
@@ -317,7 +322,7 @@ public abstract class ModeDeJeux {
         } else {
             System.out.println("Victoire de l IA, la combinaison a été devinée ");           
         }
-    }*/
+    }
 
     /**
      * Methode pour annoncer que c est au tour du joueur de jouer Mode duel

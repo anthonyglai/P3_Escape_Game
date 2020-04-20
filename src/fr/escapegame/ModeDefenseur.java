@@ -20,7 +20,7 @@ public class ModeDefenseur extends ModeDeJeux {
             this.saisieOperateur();
             this.nouvearesultat();
             this.nbretrs++;
-            this.chanceUtiliseeIa++;
+           /* this.chanceUtiliseeIa++;*/
         } while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && nbretrs != nbEssai);
     }
     

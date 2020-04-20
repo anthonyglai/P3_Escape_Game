@@ -23,6 +23,7 @@ public class ModeChallenger extends ModeDeJeux {
                 System.out.println("Vous n'avez pas trouvé la combinaison de l' IA\n");
             }
             nombreDeTours++;
+            System.out.println("test1 sur resultat joueur " + selected   );
         } while (saisieJoueur != combinaisonAleatoire && nombreDeTours != nbEssai);
         if (saisieJoueur != combinaisonAleatoire) {
             System.out.print("Vous avez perdu, la combinaison de l' IA est ");

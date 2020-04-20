@@ -120,7 +120,7 @@ public class ModeDuel extends ModeDeJeux {
     /**
      * Methode affichant si l' IA a trouvee ou non la combinaison du joueur
      */
-    public void nouvearesultat() {
+   /*public void nouvearesultat() {
         if (getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.println("L'IA a trouvé la combinaison du joueur");
             System.out.println("Victoire pour l'IA");
@@ -129,7 +129,7 @@ public class ModeDuel extends ModeDeJeux {
         } else if (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur())) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur ");
         }
-    }
+    }*/
 
     /**
      * Methode affichant que l'IA et le joueur ont perdus
@@ -172,9 +172,9 @@ public class ModeDuel extends ModeDeJeux {
             resultatPourJoueur();
             defaiteIaEtJoueur();
             nbretrs++;
-            chanceUtiliseeIa++;
-            getNbretrs();
-        } while (!getNouvelleCombinaisonIa().equals(getCombinaisonSecreteJoueur()) && getNbretrs() != getNbEssai());
+           /* chanceUtiliseeIa++;*/
+            /*getNbretrs();*/
+        } while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && nbretrs != nbEssai);
     }
 
     public void jouer() {
