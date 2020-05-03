@@ -5,18 +5,17 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 import fr.escapegame.propriete.ChargerPropriete;
 
-public class Launcher extends ModeDeJeux  {
+public class Launcher extends ModeDeJeux {
 
-    /*private Integer selected = null;*/
     private static final Logger LOGGER = Logger.getLogger(Launcher.class);
 
     /**
      * Methode affichant les differents parametrages du jeu
      */
     public void parametrage() {
-        LOGGER.info("Le nombre de combinaison est " + ChargerPropriete.NB_COMBINAISON);
-        LOGGER.info("Le nombre d'essais est " + ChargerPropriete.NB_ESSAI);
-        LOGGER.info("Activation du mode développeur: " + ChargerPropriete.MODE_DEV + "\n");
+        System.out.println("Le nombre de combinaison est " + ChargerPropriete.NB_COMBINAISON);
+        System.out.println("Le nombre d'essais est " + ChargerPropriete.NB_ESSAI);
+        System.out.println("Activation du mode développeur: " + ChargerPropriete.MODE_DEV + "\n");
     }
 
     /**
@@ -24,42 +23,35 @@ public class Launcher extends ModeDeJeux  {
      */
     public void presentationDesModes() {
         System.out.println("Veuillez choisir parmi les 3 modes de jeux ci-dessous");
-        LOGGER.info(" 1 - Le mode Challenger  ");
-        LOGGER.info(" 2 - Le mode Defenseur   ");
-        LOGGER.info(" 3 - Le mode Duel        ");
-        LOGGER.info(" 4 - Sortie du jeu ");
+        System.out.println(" 1 - Le mode Challenger  ");
+        System.out.println(" 2 - Le mode Defenseur   ");
+        System.out.println(" 3 - Le mode Duel        ");
+        System.out.println(" 4 - Sortie du jeu ");
     }
 
     /*
-     * Methode pour selectionner des 3 modes de jeux
+     * Methode pour selectionner les modes de jeux
      */
     public void ModeDeJeux() {
-        System.out.println("tata");
+        ModeChallenger modeChallenger = new ModeChallenger();
+        ModeDefenseur modeDefenseur = new ModeDefenseur();
+        ModeDuel modeDuel = new ModeDuel();
         try {
             if (this.selected == null) {
-                System.out.println("toto");
                 Scanner sc = new Scanner(System.in);
                 this.selected = sc.nextInt();
             }
-            System.out.println("titi");
             switch (this.selected) {
             case 1:
-                System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de " + getNbCombinaison() + " chiffre(s) en " + getNbEssai() + " essais. \n");
-                System.out.println("La partie commence.\n");                
-                ModeChallenger modeChallenger = new ModeChallenger();
+                introductionModeChallenger();
                 modeChallenger.jouer();
                 break;
             case 2:
-                System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "+ getNbCombinaison() + " chiffre(s) en " + getNbEssai() + " essais. \n");
-                System.out.println("La partie commence.\n");
-                ModeDefenseur modeDefenseur = new ModeDefenseur();
+                introductionModeDefenseur();
                 modeDefenseur.jouer();
                 break;
             case 3:
-                LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de " + getNbCombinaison()+ " chiffre(s) a gagné. ");
-                System.out.println("Chaque participant à " + getNbEssai() + " essais. \n");
-                System.out.println("La partie commence \n ");
-                ModeDuel modeDuel = new ModeDuel();
+                introductionModeDuel();
                 modeDuel.jouer();
                 break;
             case 4:
@@ -67,7 +59,7 @@ public class Launcher extends ModeDeJeux  {
                 System.exit(0);
                 break;
             default:
-                LOGGER.error("Recommencez votre saisie il n y a que 4 possibilité :");
+                LOGGER.error("Recommencez votre saisie il n y a que 4 possibilités :");
                 this.selected = null;
                 ModeDeJeux();
                 break;
@@ -86,21 +78,17 @@ public class Launcher extends ModeDeJeux  {
      */
     public void choixApresUneFinDePartie() {
         System.out.println("\n");
-        System.out.println("Pour poursuivre, veuillez choisir entre les 3 modes ci-dessous:");
-        System.out.println();
+        System.out.println("Pour poursuivre, veuillez choisir entre les 3 modes ci-dessous:\n");
         System.out.println("1- Recommencer une partie ");
         System.out.println("2- Changer de mode de jeu");
-        System.out.println("3- Quitter le jeu");  
+        System.out.println("3- Quitter le jeu");
         Scanner sc = new Scanner(System.in);
         {
             try {
-
                 int nbMode = sc.nextInt();
                 switch (nbMode) {
-
                 case 1:
                     System.out.println("La partie va recommencer\n");
-                    System.out.println("test variable selected = " + selected);
                     this.ModeDeJeux();
                     break;
                 case 2:
@@ -124,6 +112,5 @@ public class Launcher extends ModeDeJeux  {
                 choixApresUneFinDePartie();
             }
         }
-
     }
 }

@@ -13,6 +13,7 @@ public class ModeDefenseur extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
+        if (combinaisonAleatoireIaAtt != saisieJoueurDef) { 
         do {
             this.nouveauTourPourIa();
             this.generationNouvelleCombinaisonIa();
@@ -20,18 +21,12 @@ public class ModeDefenseur extends ModeDeJeux {
             this.saisieOperateur();
             this.nouvearesultat();
             this.nbretrs++;
-           /* this.chanceUtiliseeIa++;*/
         } while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && nbretrs != nbEssai);
     }
-    
-    
-    
+}
+       
     /** Methode generant le deroulement du jeu */
     public void jouer() {
-
-        /**
-         * Methode qui affiche quand l IA a perdu
-         */
         this.tentativePourTrouverLaCombinaisonDuJoueur();
         
 

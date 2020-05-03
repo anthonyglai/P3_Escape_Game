@@ -54,7 +54,68 @@ public abstract class ModeDeJeux {
     public char[] combiIaTab;
     
     public Integer selected = null;
-
+    
+    /*
+     * Methode d introduction du mode challenger
+     */
+    public void introductionModeChallenger() {
+        if (nbCombinaison == 1 && nbEssai  == 1) {
+           System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "+ nbCombinaison + " chiffre en " + nbEssai + " essai. \n");
+           System.out.println("La partie commence.\n");
+        } else if (nbCombinaison == 1 && nbEssai  > 1) {
+            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "+ nbCombinaison + " chiffre en " + nbEssai + " essais. \n");
+            System.out.println("La partie commence.\n");
+        } else if (nbCombinaison > 1 && nbEssai == 1) {
+            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "+ nbCombinaison + " chiffres en " + nbEssai + " essai. \n");
+            System.out.println("La partie commence.\n");
+        } else {
+            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "+ nbCombinaison + " chiffres en " + nbEssai + " essais. \n");
+            System.out.println("La partie commence.\n");
+        }        
+    }
+    
+    /*
+     * Methode d introduction du mode defenseur
+     */
+    public void introductionModeDefenseur() {
+        if (nbCombinaison == 1 && nbEssai  == 1) {
+            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "+ nbCombinaison + " chiffre en " + nbEssai + " essai. \n");
+            System.out.println("La partie commence.\n");
+        } else if (nbCombinaison == 1 && nbEssai  > 1) {
+            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "+ nbCombinaison + " chiffre en " + nbEssai + " essais. \n");
+            System.out.println("La partie commence.\n");
+        } else if (nbCombinaison > 1 && nbEssai == 1) {
+            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "+ nbCombinaison + " chiffres en " + nbEssai + " essai. \n");
+            System.out.println("La partie commence.\n");
+        } else {
+            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "+ nbCombinaison + " chiffres en " + nbEssai + " essais. \n");
+            System.out.println("La partie commence.\n");
+        }        
+    }
+    
+    /*
+     * Methode d introduction du mode duel
+     */
+    public void introductionModeDuel() {
+        if (nbCombinaison == 1 && nbEssai  == 1) { 
+           System.out.println("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ nbCombinaison + " chiffre a gagné. ");
+           System.out.println("Chaque participant à " + nbEssai + " essai. \n");
+           System.out.println("La partie commence. \n ");
+        } else if (nbCombinaison == 1 && nbEssai  > 1) { 
+            System.out.println("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ nbCombinaison + " chiffre a gagné. ");
+            System.out.println("Chaque participant à " + nbEssai + " essais. \n");
+            System.out.println("La partie commence. \n ");
+        } else if (nbCombinaison > 1 && nbEssai == 1) { 
+            System.out.println("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ nbCombinaison + " chiffres a gagné. ");
+            System.out.println("Chaque participant à " + nbEssai + " essai. \n");
+            System.out.println("La partie commence. \n ");
+        } else { 
+            System.out.println("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ nbCombinaison + " chiffres a gagné. ");
+            System.out.println("Chaque participant à " + nbEssai + " essais. \n");
+            System.out.println("La partie commence. \n ");
+        }        
+    }
+    
     /**
      * La methode genere une combinaison aleatoire pour l IA entre 0 et 9 chiffres.
      * La variable nbCombinaison determinera le nombre de chiffre que comportera la
@@ -62,7 +123,7 @@ public abstract class ModeDeJeux {
      * est = a true Mode challenger et mode duel
      */
     public void combinaisonAleatoireIa() {
-        combinaisonIa = new int[getNbCombinaison()];
+        combinaisonIa = new int[nbCombinaison];
         for (int i = 0; i < nbCombinaison; i++) {
             combinaisonIa[i] = (int) (Math.random() * 9);
             if (modeDev == true) {
@@ -85,6 +146,19 @@ public abstract class ModeDeJeux {
     }
 
     /**
+     * Méthode affichant chiffre au singulier ou au pluriel en 
+     * fonction du nombre de chiffre à saisir dans la combinaison 
+     * par le joueur
+     */    
+    public void nombreCombinaisonSaisiParJoueur() {
+        if (nbCombinaison == 1) {
+            System.out.println("Saisir une combinaison de " + nbCombinaison + " chiffre");
+        } else {
+            System.out.println("Saisir une combinaison de " + nbCombinaison + " chiffres");
+        }      
+    }
+     
+    /**
      * La methode permet au joueur de saisir une combinaison de x chiffres et de l
      * afficher mode chalenger et duel
      */
@@ -93,11 +167,11 @@ public abstract class ModeDeJeux {
         System.out.println("Veuillez tenter votre essai n°" + chanceUtiliseeJoueur++ + "\n");
         Scanner scan = new Scanner(System.in);
         Pattern combinaison = Pattern.compile("[0-9]{" + nbCombinaison + "}");
-        System.out.println("Saisir une combinaison de " + nbCombinaison + " chiffre(s)");
+        nombreCombinaisonSaisiParJoueur();
         while (!scan.hasNext(combinaison)) {
             if (scan.hasNext()) {
                 System.out.println("Erreur vous avez saisi " + scan.next());
-                System.out.println("Veuillez bien saisir " + nbCombinaison + " chiffres");
+                nombreCombinaisonSaisiParJoueur();
                 String nb = scan.nextLine();
                 tab = nb.toCharArray();
                 System.out.println("Vous proposez la combinaison " + nb + "\n");
@@ -114,10 +188,10 @@ public abstract class ModeDeJeux {
      * Mode challenger et duel
      */
     public void comparaisonDeCombinaison() {
-        saisieJoueur();
+       /* saisieJoueur();*/
         System.out.print("Le resultat est ");
-        for (int k = 0; k < getTab().length; k++) {
-            saisieJoueur = (Integer.parseInt(String.valueOf(getTab()[k])));
+        for (int k = 0; k < tab.length; k++) {
+            saisieJoueur = (Integer.parseInt(String.valueOf(tab[k])));
             combinaisonAleatoire = (combinaisonIa[k]);
             if (saisieJoueur == combinaisonAleatoire) {
                 System.out.print("=");
@@ -153,7 +227,19 @@ public abstract class ModeDeJeux {
         System.out.print("l'IA propose la combinaison ");
         this.creationCombinaisonAleatoireIa();
     }
-
+    
+    /**
+     * Methode affichant le mot chiffre au singulier ou au pluriel en fonction
+     * du nombre de chiffre dans la variable nbCombinaison
+     */
+    public void nombreChiffreCombinaisonSecreteJoueur() {
+    if (nbCombinaison == 1) {
+        System.out.println("Veuillez saisir une combinaison secrète de " + nbCombinaison + " chiffre");
+    } else {
+        System.out.println("Veuillez saisir une combinaison secrète de " + nbCombinaison + " chiffres");
+    }      
+}
+        
     /**
      * Methode pour que le joueur saisisse une combinaison de x chiffres Mode
      * defenseur et mode duel
@@ -161,7 +247,7 @@ public abstract class ModeDeJeux {
     public void saisieCombinaisonSecreteJoueur() {
         Scanner scanner = new Scanner(System.in);
         Pattern combinaisonSecrete = Pattern.compile("[0-9]{" + nbCombinaison + "}");
-        System.out.println("Veuillez saisir une combinaison secrète de " + nbCombinaison + " chiffres");
+        nombreChiffreCombinaisonSecreteJoueur();
         while (!scanner.hasNext(combinaisonSecrete)) {
             if (scanner.hasNext()) {
                 System.out.println("Erreur vous avez saisi " + scanner.next());
@@ -169,7 +255,7 @@ public abstract class ModeDeJeux {
                 String nbre = scanner.nextLine();
                 tabDef = nbre.toCharArray();
                 combinaisonSecreteJoueur = combinaisonSecreteJoueur + (nbre);
-                System.out.println("Vous avez saisi la combinaison secrète " + combinaisonSecreteJoueur + "\n");
+                nombreChiffreCombinaisonSecreteJoueur();
             }
         }
         String nbre = scanner.nextLine();
@@ -186,12 +272,12 @@ public abstract class ModeDeJeux {
     public void comparaisonDeCombinaisonPourIa() {
         System.out.println("\n");
         System.out.print("Le resultat est ");
-        for (int k = 0; k < getTabDef().length; k++) {
+        for (int k = 0; k < tabDef.length; k++) {
             saisieJoueurDef = Integer.parseInt(String.valueOf(tabDef[k]));
             combinaisonAleatoireIaAtt = combinaisonIaAtt[k];
             if (combinaisonAleatoireIaAtt == saisieJoueurDef) {
                 resultat = resultat + ("=");
-            } else if (getCombinaisonAleatoireIaAtt() > getSaisieJoueurDef()) {
+            } else if (combinaisonAleatoireIaAtt > saisieJoueurDef) {
                 resultat = resultat + ("-");
             } else {
                 resultat = resultat + ("+");
@@ -207,8 +293,6 @@ public abstract class ModeDeJeux {
     public void resultatPourIa() {
         if (combinaisonAleatoireIaAtt == saisieJoueurDef) {
             System.out.println("Victoire de l IA, la combinaison a été devinée ");
-            Launcher finDePartie = new Launcher();
-            finDePartie.choixApresUneFinDePartie(); 
         } else if (combinaisonAleatoireIaAtt > saisieJoueurDef || combinaisonAleatoireIaAtt < saisieJoueurDef) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur");
         }
@@ -219,12 +303,9 @@ public abstract class ModeDeJeux {
      */
     public void resultatPourJoueur() {
         System.out.println("\n");
-        System.out.println("test1 sur resultat joueur " + selected   );
-        if (getSaisieJoueur() == getCombinaisonAleatoire()) {
+        if (saisieJoueur == combinaisonAleatoire) {
             System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA\n ");
-            Launcher finDePartie = new Launcher();
-            finDePartie.choixApresUneFinDePartie();
-        } else if (getSaisieJoueur() < getCombinaisonAleatoire() || getSaisieJoueur() > getCombinaisonAleatoire())
+        } else if (saisieJoueur < combinaisonAleatoire || saisieJoueur > combinaisonAleatoire)
             System.out.println("Vous n'avez pas trouvé la combinaison de l IA\n ");
     }
 
@@ -256,7 +337,7 @@ public abstract class ModeDeJeux {
      * defenseur et mode duel
      */
     public void generationNouvelleCombinaisonIa() {
-        setNouvelleCombinaisonIa("");
+        nouvelleCombinaisonIa = "";
         char[] resultatDansTab = new char[resultat.length()];
         combiIaTab = new char[combiIaConvertiEnString.length()];
         for (int i = 0; i < resultat.length(); i++) {
@@ -276,7 +357,6 @@ public abstract class ModeDeJeux {
             }
         }
     }
-
 
     /**
      * Methode affichant la nouvelle combinaison de l IA mode defenseur et mode duel
@@ -304,9 +384,7 @@ public abstract class ModeDeJeux {
         }
         String result = scan.nextLine();
         System.out.println("Vous avez saisi " + result);
-        resultat = result;
-        
-        
+        resultat = result;       
     }
 
     /**
@@ -316,7 +394,7 @@ public abstract class ModeDeJeux {
    public void nouvearesultat() {
         toursIa++;
         if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && (toursIa == nbEssai)) {
-            System.out.print("Défaite pour l IA, elle n'a pas trouvé la combinaison du joueur");
+            System.out.print("Défaite pour l IA, la combinaison du joueur n'a pas été trouvée");
         } else if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur");
         } else {
@@ -328,6 +406,7 @@ public abstract class ModeDeJeux {
      * Methode pour annoncer que c est au tour du joueur de jouer Mode duel
      */
     public void tourJoueur() {
+        System.out.println("\n");
         System.out.println("C'est au tour du joueur de faire une proposition");
     }
 
@@ -336,15 +415,15 @@ public abstract class ModeDeJeux {
      */
     public void tourIa() {
         System.out.println("\n");
-        System.out.println("C'est au tour de l' IA de faire un proposition \n ");
+        System.out.println("C'est au tour de l' IA de faire une proposition \n ");
     }
 
     /**
      * Methode affichant que l'IA et le joueur ont perdus
      */
     public void defaiteIaEtJoueur() {
-        if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && nbretrs != nbEssai) {
-            System.out.println("Fin de partie, le joueur et l' IA ont perdus");
+        if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && (toursIa == nbEssai)) {
+            System.out.println("Fin de partie, le joueur et l'IA ont perdus");
             System.out.print("La combinaison de l'IA est ");
             {
                 for (int z = 0; z < combinaisonIa.length; z++)
@@ -352,286 +431,5 @@ public abstract class ModeDeJeux {
                         System.out.print(combinaisonIa[z] + "\n");
             }
         }
-    }
-
-    /**
-     * Methode qui reinitialise les operateurs saisies par le joueur dans la methode
-     * saisie operateur Mode defenseur et mode duel
-     */
-    public void resetResultat() {
-        this.resultat = "";
-    }
-
-    /**
-     * Methode qui reinitialise la variable du nombre de tour a 1 Mode defenseur et
-     * mode duel
-     */
-    public void resetnbTours() {
-        this.nbretrs = 1;
-    }
-
-    /**
-     * Methode qui reinitialise la variable de la combinaison secrete saisie par le
-     * joueur Mode defenseur et mode duel
-     */
-    public void resetcombinaisonSecrete() {
-        combinaisonSecreteJoueur = "";
-    }
-
-    /**
-     * Methode qui reinitialise la variable correspondant au nombre d essais qu'a
-     * utilises le joueur Mode defenseur et mode duel
-     */
-    public void resetnouveauTour() {
-        this.chanceUtiliseeJoueur = 0;
-    }
-
-    /**
-     * Methode qui reinitialise la nouvelle combinaison aleatoire de l IA Mode
-     * defenseur et mode duel
-     */
-    public void resetnouvelleCombinaisonIa() {
-        nouvelleCombinaisonIa = "";
-    }
-
-    /**
-     * Methode reinitialisant la variable du nombre de chance utilisee pour le
-     * joueur a 0 en fin de partie Mode defenseur et mode duel
-     */
-    public void resetChanceUtiliseeJoueur() {
-        this.chanceUtiliseeJoueur = 0;
-    }
-
-    /**
-     * Methode reinitialisant la variable du nombre de tours pour le joueur a 0 en
-     * fin de partie Mode defenseur et mode duel
-     */
-    public void resetNbTour() {
-        this.nombreDeTours = 0;
-    }
-
-    /**
-     * Methode reinitialisant la variable en fin de partie Mode defenseur et mode
-     * duel
-     */
-    public void resetChanceUtiliseeIa() {
-        this.chanceUtiliseeIa = 2;
-    }
-
-
-    public Boolean getModeDev() {
-        return modeDev;
-    }
-
-    public int getNbCombinaison() {
-        return nbCombinaison;
-    }
-
-    public int getNbEssai() {
-        return nbEssai;
-    }
-
-    public int[] getCombinaisonIa() {
-        return combinaisonIa;
-    }
-
-    public char[] getTab() {
-        return tab;
-    }
-
-    public int getSaisieJoueur() {
-        return saisieJoueur;
-    }
-
-    public int getCombinaisonAleatoire() {
-        return combinaisonAleatoire;
-    }
-
-    public int getNombreDeTours() {
-        return nombreDeTours;
-    }
-
-    public int getChanceUtiliseeJoueur() {
-        return chanceUtiliseeJoueur;
-    }
-
-    public int getMessagePerteDuJoueur() {
-        return messagePerteDuJoueur;
-    }
-
-    public int[] getCombinaisonJoueur() {
-        return combinaisonJoueur;
-    }
-
-    public int getMessagePerteIa() {
-        return messagePerteIa;
-    }
-
-    public String getCombinaisonSecreteJoueur() {
-        return combinaisonSecreteJoueur;
-    }
-
-    public int[] getCombinaisonIaModedef() {
-        return combinaisonIaModedef;
-    }
-
-    public int getCombinaisonAleatoireIaAtt() {
-        return combinaisonAleatoireIaAtt;
-    }
-
-    public int getChanceUtiliseeIa() {
-        return chanceUtiliseeIa;
-    }
-
-    public int getCombinaisonAleatoireModedef() {
-        return combinaisonAleatoireModedef;
-    }
-
-    public int[] getCombinaisonIaAtt() {
-        return combinaisonIaAtt;
-    }
-
-    public String getCombiJoueur() {
-        return combiJoueur;
-    }
-
-    public String getResultat() {
-        return resultat;
-    }
-
-    public String getResetNouvelleCombi() {
-        return resetNouvelleCombi;
-    }
-
-    public int getNbretrs() {
-        return nbretrs;
-    }
-
-    public String getNouvelleCombinaisonIa() {
-        return nouvelleCombinaisonIa;
-    }
-
-    public int getSaisieJoueurDef() {
-        return saisieJoueurDef;
-    }
-
-    public char[] getTabDef() {
-        return tabDef;
-    }
-
-    public String getCombiIaConvertiEnString() {
-        return combiIaConvertiEnString;
-    }
-
-    public char[] getCombiIaTab() {
-        return combiIaTab;
-    }
-
-    public void setModeDev(Boolean modeDev) {
-        this.modeDev = modeDev;
-    }
-
-    public void setNbCombinaison(int nbCombinaison) {
-        this.nbCombinaison = nbCombinaison;
-    }
-
-    public void setNbEssai(int nbEssai) {
-        this.nbEssai = nbEssai;
-    }
-
-    public void setCombinaisonIa(int[] combinaisonIa) {
-        this.combinaisonIa = combinaisonIa;
-    }
-
-    public void setTab(char[] tab) {
-        this.tab = tab;
-    }
-
-    public void setSaisieJoueur(int saisieJoueur) {
-        this.saisieJoueur = saisieJoueur;
-    }
-
-    public void setCombinaisonAleatoire(int combinaisonAleatoire) {
-        this.combinaisonAleatoire = combinaisonAleatoire;
-    }
-
-    public void setNombreDeTours(int nombreDeTours) {
-        this.nombreDeTours = nombreDeTours;
-    }
-
-    public void setChanceUtiliseeJoueur(int chanceUtiliseeJoueur) {
-        this.chanceUtiliseeJoueur = chanceUtiliseeJoueur;
-    }
-
-    public void setMessagePerteDuJoueur(int messagePerteDuJoueur) {
-        this.messagePerteDuJoueur = messagePerteDuJoueur;
-    }
-
-    public void setCombinaisonJoueur(int[] combinaisonJoueur) {
-        this.combinaisonJoueur = combinaisonJoueur;
-    }
-
-    public void setMessagePerteIa(int messagePerteIa) {
-        this.messagePerteIa = messagePerteIa;
-    }
-
-    public void setCombinaisonSecreteJoueur(String combinaisonSecreteJoueur) {
-        this.combinaisonSecreteJoueur = combinaisonSecreteJoueur;
-    }
-
-    public void setCombinaisonIaModedef(int[] combinaisonIaModedef) {
-        this.combinaisonIaModedef = combinaisonIaModedef;
-    }
-
-    public void setCombinaisonAleatoireIaAtt(int combinaisonAleatoireIaAtt) {
-        this.combinaisonAleatoireIaAtt = combinaisonAleatoireIaAtt;
-    }
-
-    public void setChanceUtiliseeIa(int chanceUtiliseeIa) {
-        this.chanceUtiliseeIa = chanceUtiliseeIa;
-    }
-
-    public void setCombinaisonAleatoireModedef(int combinaisonAleatoireModedef) {
-        this.combinaisonAleatoireModedef = combinaisonAleatoireModedef;
-    }
-
-    public void setCombinaisonIaAtt(int[] combinaisonIaAtt) {
-        this.combinaisonIaAtt = combinaisonIaAtt;
-    }
-
-    public void setCombiJoueur(String combiJoueur) {
-        this.combiJoueur = combiJoueur;
-    }
-
-    public void setResultat(String resultat) {
-        this.resultat = resultat;
-    }
-
-    public void setResetNouvelleCombi(String resetNouvelleCombi) {
-        this.resetNouvelleCombi = resetNouvelleCombi;
-    }
-
-    public void setNbretrs(int nbretrs) {
-        this.nbretrs = nbretrs;
-    }
-
-    public void setNouvelleCombinaisonIa(String nouvelleCombinaisonIa) {
-        this.nouvelleCombinaisonIa = nouvelleCombinaisonIa;
-    }
-
-    public void setSaisieJoueurDef(int saisieJoueurDef) {
-        this.saisieJoueurDef = saisieJoueurDef;
-    }
-
-    public void setTabDef(char[] tabDef) {
-        this.tabDef = tabDef;
-    }
-
-    public void setCombiIaConvertiEnString(String combiIaConvertiEnString) {
-        this.combiIaConvertiEnString = combiIaConvertiEnString;
-    }
-
-    public void setCombiIaTab(char[] combiIaTab) {
-        this.combiIaTab = combiIaTab;
     }
 }
