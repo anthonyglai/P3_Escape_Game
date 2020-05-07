@@ -29,13 +29,13 @@ public class ModeDuel extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
-        if (combinaisonAleatoireIaAtt != saisieJoueurDef) {                    
+        if (combinaisonAleatoireIaAtt != saisieJoueur) {                    
         this.tourJoueur();
         this.saisieJoueur();
         this.comparaisonDeCombinaison();
         this.resultatPourJoueur();
-        if (saisieJoueur != combinaisonAleatoire) {               
-            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combinaisonAleatoire && nbretrs != nbEssai) {           
+        if (saisieJoueur != combinaisonAleatoireIa) {               
+            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combinaisonAleatoireIa && nbretrs != nbEssai) {           
             this.nouveauTourPourIa();
             this.generationNouvelleCombinaisonIa();
             this.nouvelleCombinaisonIa();

@@ -13,7 +13,7 @@ public class ModeDefenseur extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
-        if (combinaisonAleatoireIaAtt != saisieJoueurDef) { 
+        if (combinaisonAleatoireIaAtt != saisieJoueur) { 
         do {
             this.nouveauTourPourIa();
             this.generationNouvelleCombinaisonIa();
