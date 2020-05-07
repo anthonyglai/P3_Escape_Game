@@ -29,13 +29,13 @@ public class ModeDuel extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
-        if (combinaisonAleatoireIa != saisieJoueur) {                    
+        if (combinaisonPourIa != combinaisonJoueur) {                    
         this.tourJoueur();
         this.saisieJoueur();
         this.comparaisonDeCombinaison();
         this.resultatPourJoueur();
         if (saisieJoueur != combinaisonAleatoireIa) {               
-            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combinaisonAleatoireIa && nbretrs != nbEssai) {           
+            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combinaisonAleatoireIa && nbreDeTours != nbEssai) {           
             this.nouveauTourPourIa();
             this.generationNouvelleCombinaisonIa();
             this.nouvelleCombinaisonIa();
@@ -47,7 +47,7 @@ public class ModeDuel extends ModeDeJeux {
             this.comparaisonDeCombinaison();
             this.resultatPourJoueur();
             this.defaiteIaEtJoueur();
-            this.nbretrs++;         
+            this.nbreDeTours++;         
             }
          }
       }

@@ -11,21 +11,22 @@ import org.apache.log4j.Logger;
 public class ModeChallenger extends ModeDeJeux {
 
    public void tentativePourTrouverLaCombinaisonDeIa() {
-        do {
+       int nombreDeTour = 0;
+       do {
             saisieJoueur();
             comparaisonDeCombinaison();
-            if (saisieJoueur == combinaisonAleatoire) {
+            if (saisieJoueur == combinaisonAleatoireIa) {
                 System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA\n");
-            } else if (saisieJoueur < combinaisonAleatoire || saisieJoueur > combinaisonAleatoire) {
+            } else if (saisieJoueur < combinaisonAleatoireIa || saisieJoueur > combinaisonAleatoireIa) {
                 System.out.println("Vous n'avez pas trouvé la combinaison de l' IA\n");
             }
-            nombreDeTours++;
-        } while (saisieJoueur != combinaisonAleatoire && nombreDeTours != nbEssai);
-        if (saisieJoueur != combinaisonAleatoire) {
+            nombreDeTour++;
+        } while (saisieJoueur != combinaisonAleatoireIa && nombreDeTour != nbEssai);
+        if (saisieJoueur != combinaisonAleatoireIa) {
             System.out.print("Vous avez perdu, la combinaison de l' IA est ");
         }
         for (int z = 0; z < combinaisonIa.length; z++) {
-            if (saisieJoueur != combinaisonAleatoire) {
+            if (saisieJoueur != combinaisonAleatoireIa) {
                 System.out.print(combinaisonIa[z]);
             }
         }
