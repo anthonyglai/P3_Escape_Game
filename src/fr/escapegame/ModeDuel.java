@@ -29,7 +29,7 @@ public class ModeDuel extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
-        if (combinaisonAleatoireIaAtt != saisieJoueur) {                    
+        if (combinaisonAleatoireIa != saisieJoueur) {                    
         this.tourJoueur();
         this.saisieJoueur();
         this.comparaisonDeCombinaison();

@@ -33,7 +33,7 @@ public abstract class ModeDeJeux {
 
     // * Attributs Variable mode defenseur
     public String combinaisonSecreteJoueur = ""; /*Definitive*/
-    public int combinaisonAleatoireIaAtt = 0; /*A voir*/
+    /*public int combinaisonAleatoireIaAtt = 0; /*A voir*/
     public int chanceUtiliseeIa = 2;  /*Définitive*/
     public int[] combinaisonIaAtt;/*ok*/
    
@@ -266,10 +266,10 @@ public abstract class ModeDeJeux {
         System.out.print("Le resultat est ");
         for (int k = 0; k < tabDef.length; k++) {
             saisieJoueur = Integer.parseInt(String.valueOf(tabDef[k]));
-            combinaisonAleatoireIaAtt = combinaisonIaAtt[k];
-            if (combinaisonAleatoireIaAtt == saisieJoueur) {
+            combinaisonAleatoireIa = combinaisonIaAtt[k];
+            if (combinaisonAleatoireIa == saisieJoueur) {
                 resultat = resultat + ("=");
-            } else if (combinaisonAleatoireIaAtt > saisieJoueur) {
+            } else if (combinaisonAleatoireIa > saisieJoueur) {
                 resultat = resultat + ("-");
             } else {
                 resultat = resultat + ("+");
@@ -283,9 +283,9 @@ public abstract class ModeDeJeux {
      * defenseur et mode duel
      */
     public void resultatPourIa() {
-        if (combinaisonAleatoireIaAtt == saisieJoueur) {
+        if (combinaisonAleatoireIa == saisieJoueur) {
             System.out.println("Victoire de l IA, la combinaison a été devinée ");
-        } else if (combinaisonAleatoireIaAtt > saisieJoueur || combinaisonAleatoireIaAtt < saisieJoueur) {
+        } else if (combinaisonAleatoireIa > saisieJoueur || combinaisonAleatoireIa < saisieJoueur) {
             System.out.println("L'IA n'a pas trouvé la combinaison du joueur");
         }
     }
