@@ -14,16 +14,18 @@ public class ModeDefenseur extends ModeDeJeux {
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
         if (combinaisonPourIa != combinaisonJoueur) { 
-        do {
+            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)&& nbreDeTours != nbEssai) { 
             this.nouveauTourPourIa();
             this.generationNouvelleCombinaisonIa();
             this.nouvelleCombinaisonIa();
+            if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
             this.saisieOperateur();
             this.nouvearesultat();
             this.nbreDeTours++;
-        } while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && nbreDeTours != nbEssai);
-    }
-}
+         }
+       } 
+    }      
+  }
        
     /** Methode generant le deroulement du jeu */
     public void jouer() {
