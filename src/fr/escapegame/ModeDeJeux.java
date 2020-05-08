@@ -359,7 +359,10 @@ public abstract class ModeDeJeux {
     public void nouvelleCombinaisonIa() {
         System.out.println("L'IA propose la nouvelle combinaison " + nouvelleCombinaisonIa);
         combiIaConvertiEnString = nouvelleCombinaisonIa + "\n";
-    }
+        if (nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
+            System.out.println("Victoire de l IA, la combinaison a été devinée");
+        }
+     }
 
     /**
      * Methode permettant au joueur de saisir sous forme d operateur pour modifier a
@@ -421,7 +424,7 @@ public abstract class ModeDeJeux {
      * Mode duel
      */
     public void defaiteIaEtJoueur() {
-        if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && (toursIa == nbEssai)) {
+        if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) &&  saisieJoueur < combinaisonAleatoireIa && (toursIa == nbEssai)) {
             System.out.println("Fin de partie, le joueur et l'IA ont perdus");
             System.out.print("La combinaison de l'IA est ");
             {
