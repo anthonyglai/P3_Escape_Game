@@ -39,9 +39,9 @@ public class ModeDuel extends ModeDeJeux {
             this.nouveauTourPourIa();
             this.generationNouvelleCombinaisonIa();
             this.nouvelleCombinaisonIa();
+            if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)){
             this.saisieOperateur();
-            this.nouvearesultat();
-            if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)){        
+            this.nouvearesultat();        
             this.tourJoueur();
             this.saisieJoueur();
             this.comparaisonDeCombinaison();
