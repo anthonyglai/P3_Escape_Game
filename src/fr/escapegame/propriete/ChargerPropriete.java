@@ -11,7 +11,7 @@ public class ChargerPropriete {
 	/*
 	 * Définition des constantes du fichier de propriété
 	 */
-	final static String NB_COMBINAISON_NAME = "application.nb.combinaison";
+	final static String NB_COMBINAISON_NAME = "application.longueur.combinaison";
 	final static String NB_ESSAI_NAME = "application.nb.nbreEssai";
 	final static String MODE_DEV_NAME = "application.modeDev";
 
@@ -42,7 +42,6 @@ public class ChargerPropriete {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-
 		}
 	}
 }

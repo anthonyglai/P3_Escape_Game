@@ -13,23 +13,23 @@ public class ModeDefenseur extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
-        if (combinaisonPourIa != combinaisonJoueur) { 
-            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)&& nbreDeTours != nbEssai) { 
-            this.nouveauTourPourIa();
-            this.generationNouvelleCombinaisonIa();
-            this.nouvelleCombinaisonIa();
-            if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
-            this.saisieOperateur();
-            this.nouvearesultat();
-            this.nbreDeTours++;
-         }
-       } 
-    }      
-  }
-       
+        if (combiIaCompareCombiJoueur != combinaisonJoueur) {
+            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && nbreDeTours != nbEssai) {
+                this.nouveauTourPourIa();
+                this.generationNouvelleCombinaisonIa();
+                this.nouvelleCombinaisonIa();
+                if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
+                    this.saisieOperateur();
+                    this.nouvearesultat();
+                    this.nbreDeTours++;
+                }
+            }
+        }
+    }
+
     /** Methode generant le deroulement du jeu */
     public void jouer() {
         this.tentativePourTrouverLaCombinaisonDuJoueur();
-        
+
     }
 }

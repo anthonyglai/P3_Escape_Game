@@ -29,31 +29,32 @@ public class ModeDuel extends ModeDeJeux {
         this.propositionCombinaisonIa();
         this.comparaisonDeCombinaisonPourIa();
         this.resultatPourIa();
-        if (combinaisonPourIa != combinaisonJoueur) {                    
-        this.tourJoueur();
-        this.saisieJoueur();
-        this.comparaisonDeCombinaison();
-        this.resultatPourJoueur();
-        if (saisieJoueur != combinaisonAleatoireIa) {               
-            while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combinaisonAleatoireIa && nbreDeTours != nbEssai) {           
-            this.nouveauTourPourIa();
-            this.generationNouvelleCombinaisonIa();
-            this.nouvelleCombinaisonIa();
-            if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)){
-            this.saisieOperateur();
-            this.nouvearesultat();        
+        if (combiIaCompareCombiJoueur != combinaisonJoueur) {
             this.tourJoueur();
             this.saisieJoueur();
             this.comparaisonDeCombinaison();
             this.resultatPourJoueur();
-            this.defaiteIaEtJoueur();
-            this.nbreDeTours++;         
+            if (saisieJoueur != combiIaComparesaisieJoueur) {
+                while (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combiIaComparesaisieJoueur
+                        && nbreDeTours != nbEssai) {
+                    this.nouveauTourPourIa();
+                    this.generationNouvelleCombinaisonIa();
+                    this.nouvelleCombinaisonIa();
+                    if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
+                        this.saisieOperateur();
+                        this.nouvearesultat();
+                        this.tourJoueur();
+                        this.saisieJoueur();
+                        this.comparaisonDeCombinaison();
+                        this.resultatPourJoueur();
+                        this.defaiteIaEtJoueur();
+                        this.nbreDeTours++;
+                    }
+                }
             }
-         }
-      }
-   }
-}
-        
+        }
+    }
+
     public void jouer() {
         this.TentativeDeTrouverLaCombinaisonEntreIaEtJoueur();
     }

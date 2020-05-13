@@ -8,7 +8,5 @@ public class Main{
 		jeu.parametrage();
 		jeu.presentationDesModes();
 		jeu.ModeDeJeux();
-
 	}
-
 }

@@ -15,19 +15,19 @@ public class ModeChallenger extends ModeDeJeux {
        do {
             saisieJoueur();
             comparaisonDeCombinaison();
-            if (saisieJoueur == combinaisonAleatoireIa) {
+            if (saisieJoueur == combiIaComparesaisieJoueur) {
                 System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA\n");
-            } else if (saisieJoueur < combinaisonAleatoireIa || saisieJoueur > combinaisonAleatoireIa) {
+            } else if (saisieJoueur < combiIaComparesaisieJoueur || saisieJoueur > combiIaComparesaisieJoueur) {
                 System.out.println("Vous n'avez pas trouvé la combinaison de l' IA\n");
             }
             nombreDeTour++;
-        } while (saisieJoueur != combinaisonAleatoireIa && nombreDeTour != nbEssai);
-        if (saisieJoueur != combinaisonAleatoireIa) {
+        } while (saisieJoueur != combiIaComparesaisieJoueur && nombreDeTour != nbEssai);
+        if (saisieJoueur != combiIaComparesaisieJoueur) {
             System.out.print("Vous avez perdu, la combinaison de l' IA est ");
         }
-        for (int z = 0; z < combinaisonIa.length; z++) {
-            if (saisieJoueur != combinaisonAleatoireIa) {
-                System.out.print(combinaisonIa[z]);
+        for (int z = 0; z < combinaisonIaSecrete.length; z++) {
+            if (saisieJoueur != combiIaComparesaisieJoueur) {
+                System.out.print(combinaisonIaSecrete[z]);
             }
         }
     }

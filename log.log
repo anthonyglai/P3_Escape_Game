@@ -1,17 +1,1 @@
-2020-04-02 16:33:53 INFO  Launcher:13 - Le nombre de combinaison est 0
-2020-04-02 16:33:53 INFO  Launcher:14 - Le nombre d'essais est 0
-2020-04-02 16:33:53 INFO  Launcher:15 - Activation du mode développeur: false
-
-2020-04-02 16:33:53 INFO  Launcher:23 -  1 - Le mode Challenger  
-2020-04-02 16:33:53 INFO  Launcher:24 -  2 - Le mode Defenseur   
-2020-04-02 16:33:53 INFO  Launcher:25 -  3 - Le mode Duel        
-2020-04-02 16:33:53 INFO  Launcher:26 -  4 - Sortie du jeu 
-2020-04-02 16:36:26 INFO  Launcher:13 - Le nombre de combinaison est 1
-2020-04-02 16:36:26 INFO  Launcher:14 - Le nombre d'essais est 4
-2020-04-02 16:36:26 INFO  Launcher:15 - Activation du mode développeur: true
-
-2020-04-02 16:36:26 INFO  Launcher:23 -  1 - Le mode Challenger  
-2020-04-02 16:36:26 INFO  Launcher:24 -  2 - Le mode Defenseur   
-2020-04-02 16:36:26 INFO  Launcher:25 -  3 - Le mode Duel        
-2020-04-02 16:36:26 INFO  Launcher:26 -  4 - Sortie du jeu 
-2020-04-02 16:36:31 INFO  Launcher:42 - Vous avez choisi le mode Challenger
+2020-05-13 09:00:42 INFO  Launcher:26 - Veuillez choisir parmi les 3 modes de jeux ci-dessous

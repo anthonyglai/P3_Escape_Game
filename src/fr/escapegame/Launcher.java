@@ -2,13 +2,15 @@ package fr.escapegame;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.LogManager;
+
 import org.apache.log4j.Logger;
+
 import fr.escapegame.propriete.ChargerPropriete;
 
 public class Launcher extends ModeDeJeux {
 
     private static final Logger LOGGER = Logger.getLogger(Launcher.class);
-
     /**
      * Methode affichant les differents parametrages du jeu
      */
@@ -22,7 +24,7 @@ public class Launcher extends ModeDeJeux {
      * Methode pour selectionner les modes de jeux et sortir du jeu
      */
     public void presentationDesModes() {
-        System.out.println("Veuillez choisir parmi les 3 modes de jeux ci-dessous");
+        LOGGER.info("Veuillez choisir parmi les 3 modes de jeux ci-dessous");
         System.out.println(" 1 - Le mode Challenger  ");
         System.out.println(" 2 - Le mode Defenseur   ");
         System.out.println(" 3 - Le mode Duel        ");
