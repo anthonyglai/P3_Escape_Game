@@ -10,15 +10,15 @@ import org.apache.log4j.Logger;
  */
 public class ModeChallenger extends ModeDeJeux {
 
-   public void tentativePourTrouverLaCombinaisonDeIa() {
-       int nombreDeTour = 0;
-       do {
+    public void tentativePourTrouverLaCombinaisonDeIa() {
+        int nombreDeTour = 0;
+        do {
             saisieJoueur();
             comparaisonDeCombinaison();
             if (saisieJoueur == combiIaComparesaisieJoueur) {
-                System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA\n");
+                System.out.print("Vous avez gagnÃ©, vous avez trouvÃ© la combinaison de l' IA\n");
             } else if (saisieJoueur < combiIaComparesaisieJoueur || saisieJoueur > combiIaComparesaisieJoueur) {
-                System.out.println("Vous n'avez pas trouvé la combinaison de l' IA\n");
+                System.out.println("Vous n'avez pas trouvÃ© la combinaison de l' IA\n");
             }
             nombreDeTour++;
         } while (saisieJoueur != combiIaComparesaisieJoueur && nombreDeTour != nbEssai);
@@ -33,7 +33,7 @@ public class ModeChallenger extends ModeDeJeux {
     }
 
     public void jouer() {
-       this.combinaisonIaSecrete();
-       this.tentativePourTrouverLaCombinaisonDeIa();
+        this.combinaisonIaSecrete();
+        this.tentativePourTrouverLaCombinaisonDeIa();
     }
 }

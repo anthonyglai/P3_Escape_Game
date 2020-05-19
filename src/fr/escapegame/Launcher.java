@@ -15,16 +15,16 @@ public class Launcher extends ModeDeJeux {
      * Methode affichant les differents parametrages du jeu
      */
     public void parametrage() {
-        System.out.println("Le nombre de combinaison est " + ChargerPropriete.NB_COMBINAISON);
-        System.out.println("Le nombre d'essais est " + ChargerPropriete.NB_ESSAI);
-        System.out.println("Activation du mode développeur: " + ChargerPropriete.MODE_DEV + "\n");
+        LOGGER.info("Le nombre de combinaison est " + ChargerPropriete.NB_COMBINAISON);
+        LOGGER.info("Le nombre d'essais est " + ChargerPropriete.NB_ESSAI);
+        LOGGER.info("Activation du mode developpeur: " + ChargerPropriete.MODE_DEV + "\n");
     }
 
     /**
      * Methode pour selectionner les modes de jeux et sortir du jeu
      */
     public void presentationDesModes() {
-        LOGGER.info("Veuillez choisir parmi les 3 modes de jeux ci-dessous");
+        System.out.println("Veuillez choisir parmi les 3 modes de jeux ci-dessous");
         System.out.println(" 1 - Le mode Challenger  ");
         System.out.println(" 2 - Le mode Defenseur   ");
         System.out.println(" 3 - Le mode Duel        ");
@@ -61,7 +61,7 @@ public class Launcher extends ModeDeJeux {
                 System.exit(0);
                 break;
             default:
-                LOGGER.error("Recommencez votre saisie il n y a que 4 possibilités :");
+                LOGGER.error("Recommencez votre saisie il n y a que 4 possibilites :");
                 this.selected = null;
                 ModeDeJeux();
                 break;
@@ -95,7 +95,7 @@ public class Launcher extends ModeDeJeux {
                     break;
                 case 2:
                     this.selected = null;
-                    System.out.println("Retour à l'accueil pour choisir un autre mode de jeux\n");
+                    System.out.println("Retour a l'accueil pour choisir un autre mode de jeux\n");
                     this.presentationDesModes();
                     this.ModeDeJeux();
                     break;
@@ -105,12 +105,12 @@ public class Launcher extends ModeDeJeux {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Recommencez votre saisie il n y a que 4 possibilités\n");
+                    System.out.println("Recommencez votre saisie il n y a que 4 possibilites\n");
                     choixApresUneFinDePartie();
                     break;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Erreur de saisie, recommence\n");
+                LOGGER.error("Erreur de saisie, recommence\n");
                 choixApresUneFinDePartie();
             }
         }

@@ -27,7 +27,7 @@ public class ModeDefenseur extends ModeDeJeux {
         }
     }
 
-    /** Methode generant le deroulement du jeu */
+    /** Methode gnerant le deroulement du jeu */
     public void jouer() {
         this.tentativePourTrouverLaCombinaisonDuJoueur();
 

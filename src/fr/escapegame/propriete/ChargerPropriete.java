@@ -9,14 +9,14 @@ public class ChargerPropriete {
 	
 
 	/*
-	 * Définition des constantes du fichier de propriété
+	 * Definition des constantes du fichier de propriete
 	 */
 	final static String NB_COMBINAISON_NAME = "application.longueur.combinaison";
 	final static String NB_ESSAI_NAME = "application.nb.nbreEssai";
 	final static String MODE_DEV_NAME = "application.modeDev";
 
 	/*
-	 * Définition des constantes
+	 * Definition des constantes
 	 */
 	public static int NB_COMBINAISON;
 	public static int NB_ESSAI;
@@ -25,13 +25,12 @@ public class ChargerPropriete {
 
 	static {
 		/*
-		 * 1) Importation de la classe Properties (création du fichier vide)
-		 * 2) Importation de la FileInputStream (ouvre une connexion à un fichier)
-		 * 3) Property.load(fs) Lit la liste de propriété à partir de FileInputStream
-		 * 4) 3 constante = getproperty va rechercher les propriétés de la constante 
+		 * 1) Importation de la classe Properties (creation du fichier vide)
+		 * 2) Importation de la FileInputStream (ouvre une connexion e un fichier)
+		 * 3) Property.load(fs) Lit la liste de propriete e partir de FileInputStream
+		 * 4) 3 constante = getproperty va rechercher les proprietes de la constante 
 		 */
-		Properties property = new Properties();
-		FileInputStream fs;
+		Properties property = new Properties();	FileInputStream fs;
 		try {
 			System.out.println("Chargement du fichier: " + System.getProperty("user.dir") + File.separator + FILE_NAME);
 			fs = new FileInputStream(System.getProperty("user.dir") + File.separator + FILE_NAME);

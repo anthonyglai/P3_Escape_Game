@@ -12,13 +12,12 @@ import fr.escapegame.propriete.ChargerPropriete;
 /**
  * ModeDeJeux est la classe parent regroupant les methodes et variable pour les
  * 3 classes ModeChallenger ModeDefenseur et ModeDuel
- * 
+ *
  * @author Glairon Anthony
  * @version 1.0
  */
 public abstract class ModeDeJeux {
-    public static final Logger LOGGER = Logger.getLogger(Launcher.class);
-
+    private static final Logger LOGGER = Logger.getLogger(Launcher.class);
     /*
      * Variable du fichier de propriete
      */
@@ -53,20 +52,20 @@ public abstract class ModeDeJeux {
      */
     public void introductionModeChallenger() {
         if (longueurCombinaison == 1 && nbEssai == 1) {
-            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
-                            + longueurCombinaison + " chiffre en " + nbEssai + " essai. \n");
+            LOGGER.info("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
+                    + longueurCombinaison + " chiffre en " + nbEssai + " essai. \n");
             System.out.println("La partie commence.\n");
         } else if (longueurCombinaison == 1 && nbEssai > 1) {
-            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
-                            + longueurCombinaison + " chiffre en " + nbEssai + " essais. \n");
+            LOGGER.info("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
+                    + longueurCombinaison + " chiffre en " + nbEssai + " essais. \n");
             System.out.println("La partie commence.\n");
         } else if (longueurCombinaison > 1 && nbEssai == 1) {
-            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
-                            + longueurCombinaison + " chiffres en " + nbEssai + " essai. \n");
+            LOGGER.info("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
+                    + longueurCombinaison + " chiffres en " + nbEssai + " essai. \n");
             System.out.println("La partie commence.\n");
         } else {
-            System.out.println("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
-                            + longueurCombinaison + " chiffres en " + nbEssai + " essais. \n");
+            LOGGER.info("Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de "
+                    + longueurCombinaison + " chiffres en " + nbEssai + " essais. \n");
             System.out.println("La partie commence.\n");
         }
     }
@@ -76,19 +75,19 @@ public abstract class ModeDeJeux {
      */
     public void introductionModeDefenseur() {
         if (longueurCombinaison == 1 && nbEssai == 1) {
-            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "
+            LOGGER.info("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrÃ¨te de "
                     + longueurCombinaison + " chiffre en " + nbEssai + " essai. \n");
             System.out.println("La partie commence.\n");
         } else if (longueurCombinaison == 1 && nbEssai > 1) {
-            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "
+            LOGGER.info("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrÃ¨te de "
                     + longueurCombinaison + " chiffre en " + nbEssai + " essais. \n");
             System.out.println("La partie commence.\n");
         } else if (longueurCombinaison > 1 && nbEssai == 1) {
-            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "
+            LOGGER.info("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrÃ¨te de "
                     + longueurCombinaison + " chiffres en " + nbEssai + " essai. \n");
             System.out.println("La partie commence.\n");
         } else {
-            System.out.println("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de "
+            LOGGER.info("Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrÃ¨te de "
                     + longueurCombinaison + " chiffres en " + nbEssai + " essais. \n");
             System.out.println("La partie commence.\n");
         }
@@ -99,28 +98,20 @@ public abstract class ModeDeJeux {
      */
     public void introductionModeDuel() {
         if (longueurCombinaison == 1 && nbEssai == 1) {
-            System.out.println(
-                    "Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "
-                            + longueurCombinaison + " chiffre a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essai. \n");
+            LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de " + longueurCombinaison + " chiffre a gagnÃ©. ");
+            System.out.println("Chaque participant Ã  " + nbEssai + " essai. \n");
             System.out.println("La partie commence. \n ");
         } else if (longueurCombinaison == 1 && nbEssai > 1) {
-            System.out.println(
-                    "Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "
-                            + longueurCombinaison + " chiffre a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essais. \n");
+            LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de " + longueurCombinaison + " chiffre a gagnÃ©. ");
+            System.out.println("Chaque participant Ã  " + nbEssai + " essais. \n");
             System.out.println("La partie commence. \n ");
         } else if (longueurCombinaison > 1 && nbEssai == 1) {
-            System.out.println(
-                    "Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "
-                            + longueurCombinaison + " chiffres a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essai. \n");
+            LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ longueurCombinaison + " chiffres a gagnÃ©. ");
+            System.out.println("Chaque participant Ã  " + nbEssai + " essai. \n");
             System.out.println("La partie commence. \n ");
         } else {
-            System.out.println(
-                    "Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "
-                            + longueurCombinaison + " chiffres a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essais. \n");
+            LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ longueurCombinaison + " chiffres a gagnÃ©. ");
+            System.out.println("Chaque participant Ã  " + nbEssai + " essais. \n");
             System.out.println("La partie commence. \n ");
         }
     }
@@ -149,13 +140,13 @@ public abstract class ModeDeJeux {
      * mode duel
      */
     public void combinaisonIaSecrete() {
-        System.out.print("La combinaison de l'IA à deviner est ");
+        System.out.print("La combinaison de l'IA Ã  deviner est ");
         this.combinaisonAleatoireIa();
     }
 
     /**
      * Methode affichant chiffre au singulier ou au pluriel en fonction du nombre de
-     * chiffre à saisir dans la combinaison par le joueur
+     * chiffre Ã  saisir dans la combinaison par le joueur
      */
     public void nombreCombinaisonSaisiParJoueur() {
         if (longueurCombinaison == 1) {
@@ -171,7 +162,7 @@ public abstract class ModeDeJeux {
      */
     public void saisieJoueur() {
         System.out.println("\n");
-        System.out.println("Veuillez tenter votre essai n°" + chanceUtiliseeJoueur++ + "\n");
+        System.out.println("Veuillez tenter votre essai nÂ°" + chanceUtiliseeJoueur++ + "\n");
         Scanner scan = new Scanner(System.in);
         Pattern combinaison = Pattern.compile("[0-9]{" + longueurCombinaison + "}");
         nombreCombinaisonSaisiParJoueur();
@@ -229,7 +220,7 @@ public abstract class ModeDeJeux {
      * duel
      */
     public void propositionCombinaisonIa() {
-        System.out.println("Essai n° 1 pour l'Ia \n");
+        System.out.println("Essai nÂ° 1 pour l'Ia \n");
         System.out.print("l'IA propose la combinaison ");
         this.creationCombinaisonAleatoireIa();
     }
@@ -240,9 +231,9 @@ public abstract class ModeDeJeux {
      */
     public void nombreChiffreCombinaisonSecreteJoueur() {
         if (longueurCombinaison == 1) {
-            System.out.println("Veuillez saisir une combinaison secrète de " + longueurCombinaison + " chiffre");
+            System.out.println("Veuillez saisir une combinaison secrÃ¨te de " + longueurCombinaison + " chiffre");
         } else {
-            System.out.println("Veuillez saisir une combinaison secrète de " + longueurCombinaison + " chiffres");
+            System.out.println("Veuillez saisir une combinaison secrÃ¨te de " + longueurCombinaison + " chiffres");
         }
     }
 
@@ -267,7 +258,7 @@ public abstract class ModeDeJeux {
         String nbre = scanner.nextLine();
         tabChar = nbre.toCharArray();
         combinaisonSecreteJoueur = combinaisonSecreteJoueur + (nbre);
-        System.out.println("Vous avez saisi la combinaison secrète " + combinaisonSecreteJoueur + "\n");
+        System.out.println("Vous avez saisi la combinaison secrÃ¨te " + combinaisonSecreteJoueur + "\n");
     }
 
     /**
@@ -298,9 +289,9 @@ public abstract class ModeDeJeux {
      */
     public void resultatPourIa() {
         if (combiIaCompareCombiJoueur == combinaisonJoueur) {
-            System.out.println("Victoire de l IA, la combinaison a été devinée ");
+            System.out.println("Victoire de l IA, la combinaison a Ã©tÃ© devinÃ©e ");
         } else if (combiIaCompareCombiJoueur > combinaisonJoueur || combiIaCompareCombiJoueur < combinaisonJoueur) {
-            System.out.println("L'IA n'a pas trouvé la combinaison du joueur");
+            System.out.println("L'IA n'a pas trouvÃ© la combinaison du joueur");
         }
     }
 
@@ -309,9 +300,9 @@ public abstract class ModeDeJeux {
      */
     public void resultatPourJoueur() {
         if (saisieJoueur == combiIaComparesaisieJoueur) {
-            System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA");
+            System.out.print("Vous avez gagnÃ©, vous avez trouvÃ© la combinaison de l' IA");
         } else if (saisieJoueur < combiIaComparesaisieJoueur || saisieJoueur > combiIaComparesaisieJoueur)
-            System.out.println("Vous n'avez pas trouvé la combinaison de l IA");
+            System.out.println("Vous n'avez pas trouvÃ© la combinaison de l IA");
     }
 
     /**
@@ -319,13 +310,13 @@ public abstract class ModeDeJeux {
      */
     public void nouveauTourPourIa() {
         System.out.println("\n");
-        System.out.println("Essai n° " + chanceUtiliseeIa++ + " pour l'Ia\n");
+        System.out.println("Essai nÂ° " + chanceUtiliseeIa++ + " pour l'Ia\n");
     }
 
     /**
      * Methode generant une serie de nombre aleatoire compris dans un intervalle
      * maxi et min qui s integre dans la methode generationNouvelleCombinaisonIa
-     * 
+     *
      * @param min
      * @param max
      * @return defenseur et mode duel
@@ -370,7 +361,7 @@ public abstract class ModeDeJeux {
         System.out.println("L'IA propose la combinaison " + nouvelleCombinaisonIa);
         combiIaConvertiEnString = nouvelleCombinaisonIa + "\n";
         if (nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
-            System.out.println("Victoire de l IA, la combinaison a été devinée");
+            System.out.println("Victoire de l IA, la combinaison a Ã©tÃ© devinÃ©e");
         }
     }
 
@@ -382,11 +373,11 @@ public abstract class ModeDeJeux {
     public void saisieOperateur() {
         Scanner scan = new Scanner(System.in);
         Pattern operateur = Pattern.compile("[+---=]");
-        System.out.println("Veuillez saisir le résultat sous forme d'opérateur + - ou =");
+        System.out.println("Veuillez saisir le rÃ©sultat sous forme d'opÃ©rateur + - ou =");
         while (!scan.hasNext(operateur)) {
             if (scan.hasNext()) {
-                System.out.println("Vous n'avez pas saisi des opérateurs ");
-                System.out.println("Veuillez à nouveau saisir le résultat sous forme d'opérateur + - ou = ");
+                System.out.println("Vous n'avez pas saisi des opÃ©rateurs ");
+                System.out.println("Veuillez Ã  nouveau saisir le rÃ©sultat sous forme d'opÃ©rateur + - ou = ");
                 String result = scan.nextLine();
                 resultat = result;
             }
@@ -403,11 +394,11 @@ public abstract class ModeDeJeux {
     public void nouvearesultat() {
         toursIa++;
         if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && (toursIa == nbEssai)) {
-            System.out.print("Défaite pour l IA, la combinaison du joueur n'a pas été trouvée");
+            System.out.print("DÃ©faite pour l IA, la combinaison du joueur n'a pas Ã©tÃ© trouvÃ©e");
         } else if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur)) {
-            System.out.println("L'IA n'a pas trouvé la combinaison du joueur");
+            System.out.println("L'IA n'a pas trouvÃ© la combinaison du joueur");
         } else {
-            System.out.println("Victoire de l IA, la combinaison a été devinée ");
+            System.out.println("Victoire de l IA, la combinaison a Ã©tÃ© devinÃ©e ");
         }
     }
 
