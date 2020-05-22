@@ -1,1 +1,460 @@
 2020-05-13 09:00:42 INFO  Launcher:26 - Veuillez choisir parmi les 3 modes de jeux ci-dessous
+2020-05-21 16:23:32 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 16:23:32 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:23:32 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:23:38 INFO  Launcher:67 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 16:27:06 INFO  Launcher:113 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 16:27:51 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 16:27:51 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:27:51 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:27:53 INFO  Launcher:113 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 16:28:10 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 16:28:10 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:28:10 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:28:48 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 16:28:48 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:28:48 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:28:53 INFO  Launcher:105 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 1 chiffre a gagné. 
+2020-05-21 16:35:30 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 16:35:30 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:35:30 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:35:33 INFO  Launcher:59 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 1 chiffre en 4 essais. 
+
+2020-05-21 16:35:38 INFO  Launcher:59 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 1 chiffre en 4 essais. 
+
+2020-05-21 16:40:37 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 16:40:37 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:40:37 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:40:43 INFO  Launcher:113 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 16:41:23 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 16:41:23 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:41:23 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:41:26 INFO  Launcher:105 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 1 chiffre a gagné. 
+2020-05-21 16:41:32 INFO  Launcher:105 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 1 chiffre a gagné. 
+2020-05-21 16:42:40 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 16:42:40 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:42:40 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:42:55 INFO  Launcher:113 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 16:43:13 INFO  Launcher:113 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 16:45:16 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:45:16 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:45:16 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:45:20 INFO  Launcher:113 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 2 chiffres a gagné. 
+2020-05-21 16:45:51 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:45:51 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:45:51 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:46:11 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 16:49:44 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:49:44 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:49:44 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:49:47 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 16:53:17 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:53:17 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:53:17 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:53:20 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 16:54:51 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:54:51 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:54:51 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:54:57 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 16:55:32 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 16:57:37 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:57:37 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:57:37 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:57:42 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 16:58:42 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 16:58:42 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 16:58:42 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 16:58:44 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:00:17 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:00:17 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:00:17 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:00:20 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:03:12 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:03:12 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:03:12 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:03:14 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:03:51 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:03:51 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:03:51 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:03:53 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:04:31 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:04:31 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:04:31 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:04:33 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:09:56 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:09:56 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:09:56 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:09:59 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:10:44 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:10:44 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:10:44 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:10:46 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:16:33 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:16:33 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:16:33 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:16:36 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:17:00 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:17:00 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:17:00 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:17:11 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:19:59 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:19:59 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:19:59 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:20:00 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:27:07 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:27:07 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:27:07 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:29:52 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:29:52 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:29:52 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:34:33 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:34:33 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:34:33 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:34:36 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:35:25 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:35:25 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:35:25 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:35:28 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:35:32 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:39:53 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:39:53 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:39:53 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:40:40 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:46:16 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:46:16 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:46:16 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:46:22 INFO  Launcher:91 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 17:52:49 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 17:52:49 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 17:52:49 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 17:52:55 INFO  Launcher:67 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 2 chiffres en 4 essais. 
+
+2020-05-21 18:02:01 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 18:02:01 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 18:02:01 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 18:02:04 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 18:02:07 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 18:02:11 INFO  Launcher:90 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 19:37:29 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 19:37:29 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 19:37:29 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 19:37:33 INFO  Launcher:82 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 19:37:36 INFO  Launcher:82 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 19:38:19 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 19:38:19 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 19:38:19 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 19:38:21 INFO  Launcher:82 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 19:38:23 INFO  Launcher:82 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 19:39:13 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 19:39:13 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 19:39:13 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 19:39:16 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 19:39:50 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 19:39:50 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 19:39:50 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 19:39:53 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 19:39:56 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 20:06:28 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:06:28 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:06:28 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:06:32 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:07:30 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:07:30 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:07:30 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:07:45 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:09:49 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:09:49 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:09:49 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:09:51 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:09:55 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:20:39 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 20:20:39 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:20:39 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:20:41 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 20:20:51 ERROR Launcher:113 - Erreur de saisie, recommence
+
+2020-05-21 20:21:04 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 20:21:04 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:21:04 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:21:09 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 20:24:12 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 20:24:12 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:24:12 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:24:20 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 20:24:50 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 20:34:52 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 20:34:52 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:34:52 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:35:00 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 20:35:24 INFO  Launcher:18 - Le nombre de combinaison est 1
+2020-05-21 20:35:24 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:35:24 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:35:26 INFO  Launcher:81 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 1 chiffre en 4 essais. 
+
+2020-05-21 20:35:51 INFO  Launcher:18 - Le nombre de combinaison est 3
+2020-05-21 20:35:51 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:35:51 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:35:54 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 3 chiffres en 4 essais. 
+
+2020-05-21 20:36:01 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 3 chiffres en 4 essais. 
+
+2020-05-21 20:36:10 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 3 chiffres en 4 essais. 
+
+2020-05-21 20:37:07 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:37:07 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:37:07 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:37:14 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:37:19 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:42:34 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:42:34 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:42:34 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:42:38 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:43:04 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:43:04 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:43:04 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:43:14 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:43:41 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:43:41 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:43:41 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:43:42 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:43:46 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:44:11 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:44:11 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:44:11 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:44:30 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:44:30 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:44:30 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:44:32 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 20:44:38 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:44:38 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:44:38 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:44:41 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:46:13 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 20:46:13 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:46:13 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:46:15 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 20:49:10 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 20:49:10 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 20:49:10 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 20:49:12 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 21:01:15 INFO  Launcher:18 - Le nombre de combinaison est 2
+2020-05-21 21:01:15 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 21:01:15 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 21:01:22 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 2 chiffres en 4 essais. 
+
+2020-05-21 21:01:48 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 21:01:48 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 21:01:48 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 21:01:53 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 21:25:34 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 21:25:34 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 21:25:34 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 21:25:38 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 21:28:46 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 21:28:46 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 21:28:46 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 21:28:48 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 21:33:14 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 21:33:14 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 21:33:14 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 21:33:17 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 21:37:10 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 21:37:10 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 21:37:10 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 21:37:13 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 22:42:17 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 22:42:17 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 22:42:17 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 22:42:23 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secrète de 4 chiffres en 4 essais. 
+
+2020-05-21 23:00:14 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:00:14 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:00:14 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:00:33 INFO  Launcher:67 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:07:24 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:07:24 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:07:24 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:11:49 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:11:49 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:11:49 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:11:52 INFO  Launcher:67 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:19:27 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:19:27 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:19:27 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:19:39 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:25:44 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:25:44 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:25:44 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:25:48 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:30:32 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:30:32 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:30:32 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:30:34 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 23:31:39 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:31:39 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:31:39 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:31:44 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 23:31:51 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 
+2020-05-21 23:32:37 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:32:37 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:32:37 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:32:39 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:32:43 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:32:51 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:34:57 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:34:57 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:34:57 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:34:59 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:35:52 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:36:03 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:36:09 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:38:23 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:38:23 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:38:23 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:38:25 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:38:47 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:40:02 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:40:05 INFO  Launcher:66 - Vous avez choisi le mode challenger, vous allez devoir deviner la combinaison de l IA de 4 chiffres en 4 essais. 
+
+2020-05-21 23:40:16 INFO  Launcher:89 - Vous avez choisi le mode Defenseur, l'IA doit deviner votre combinaison secr�te de 4 chiffres en 4 essais. 
+
+2020-05-21 23:40:45 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:44:56 INFO  Launcher:18 - Le nombre de combinaison est 4
+2020-05-21 23:44:56 INFO  Launcher:19 - Le nombre d'essais est 4
+2020-05-21 23:44:56 INFO  Launcher:20 - Activation du mode developpeur: true
+
+2020-05-21 23:45:01 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagn�. 
+2020-05-21 23:47:33 INFO  Launcher:112 - Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de 4 chiffres a gagné. 

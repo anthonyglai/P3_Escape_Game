@@ -4,7 +4,6 @@ package fr.escapegame;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
-
 import org.apache.log4j.Logger;
 
 import fr.escapegame.propriete.ChargerPropriete;
@@ -129,7 +128,7 @@ public abstract class ModeDeJeux {
             if (modeDev == true) {
                 System.out.print(combinaisonIaSecrete[i]);
             } else {
-                System.out.println("?");
+                System.out.print("?");
             }
         }
     }
@@ -197,8 +196,8 @@ public abstract class ModeDeJeux {
             } else {
                 System.out.print("-");
             }
-            System.out.println("\n");
         }
+        System.out.println("\n");
     }
 
     /**
@@ -372,7 +371,8 @@ public abstract class ModeDeJeux {
      */
     public void saisieOperateur() {
         Scanner scan = new Scanner(System.in);
-        Pattern operateur = Pattern.compile("[+---=]");
+        String operateur = "[-+=]{"+longueurCombinaison+"}";
+        /*Pattern operateur = Pattern.compile("[-+=]{4}");*/
         System.out.println("Veuillez saisir le résultat sous forme d'opérateur + - ou =");
         while (!scan.hasNext(operateur)) {
             if (scan.hasNext()) {
@@ -429,8 +429,9 @@ public abstract class ModeDeJeux {
             {
                 for (int z = 0; z < combinaisonIaSecrete.length; z++)
                     if (saisieJoueur != combiIaComparesaisieJoueur)
-                        System.out.print(combinaisonIaSecrete[z] + "\n");
+                        System.out.print(combinaisonIaSecrete[z] );
             }
         }
+        System.out.println("\n");
     }
 }

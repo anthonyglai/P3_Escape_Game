@@ -6,7 +6,7 @@ import java.util.Properties;
 
 
 public class ChargerPropriete {
-	
+
 
 	/*
 	 * Definition des constantes du fichier de propriete
@@ -28,7 +28,7 @@ public class ChargerPropriete {
 		 * 1) Importation de la classe Properties (creation du fichier vide)
 		 * 2) Importation de la FileInputStream (ouvre une connexion e un fichier)
 		 * 3) Property.load(fs) Lit la liste de propriete e partir de FileInputStream
-		 * 4) 3 constante = getproperty va rechercher les proprietes de la constante 
+		 * 4) 3 constante = getproperty va rechercher les proprietes de la constante
 		 */
 		Properties property = new Properties();	FileInputStream fs;
 		try {
