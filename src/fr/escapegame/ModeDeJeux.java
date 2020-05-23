@@ -4,6 +4,7 @@ package fr.escapegame;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
 import org.apache.log4j.Logger;
 
 import fr.escapegame.propriete.ChargerPropriete;
@@ -98,19 +99,19 @@ public abstract class ModeDeJeux {
     public void introductionModeDuel() {
         if (longueurCombinaison == 1 && nbEssai == 1) {
             LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de " + longueurCombinaison + " chiffre a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essai. \n");
+            System.out.println("Les participants ont " + nbEssai + " essai. \n");
             System.out.println("La partie commence. \n ");
         } else if (longueurCombinaison == 1 && nbEssai > 1) {
             LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de " + longueurCombinaison + " chiffre a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essais. \n");
+            System.out.println("Les participants ont " + nbEssai + " essais. \n");
             System.out.println("La partie commence. \n ");
         } else if (longueurCombinaison > 1 && nbEssai == 1) {
             LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ longueurCombinaison + " chiffres a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essai. \n");
+            System.out.println("Les participants ont " + nbEssai + " essai. \n");
             System.out.println("La partie commence. \n ");
         } else {
             LOGGER.info("Vous avez choisi le mode Duel, le premier entre l'IA ou le joueur qui trouve la combinaison de "+ longueurCombinaison + " chiffres a gagné. ");
-            System.out.println("Chaque participant à " + nbEssai + " essais. \n");
+            System.out.println("Les participants ont " + nbEssai + " essais. \n");
             System.out.println("La partie commence. \n ");
         }
     }
@@ -167,7 +168,7 @@ public abstract class ModeDeJeux {
         nombreCombinaisonSaisiParJoueur();
         while (!scan.hasNext(combinaison)) {
             if (scan.hasNext()) {
-                System.out.println("Erreur vous avez saisi " + scan.next());
+                LOGGER.error("Erreur vous avez saisi " + scan.next());
                 nombreCombinaisonSaisiParJoueur();
                 String nb = scan.nextLine();
                 saisieJoueurconvertiEnChar = nb.toCharArray();
@@ -210,7 +211,7 @@ public abstract class ModeDeJeux {
         for (int i = 0; i < longueurCombinaison; i++) {
             combinaisonIa[i] = (int) (Math.random() * 9);
             System.out.print(combinaisonIa[i]);
-            combiIaConvertiEnString = combiIaConvertiEnString + combinaisonIa[i];
+            combiIaConvertiEnString += combinaisonIa[i];
         }
     }
 
@@ -246,17 +247,17 @@ public abstract class ModeDeJeux {
         nombreChiffreCombinaisonSecreteJoueur();
         while (!scanner.hasNext(combinaisonSecrete)) {
             if (scanner.hasNext()) {
-                System.out.println("Erreur vous avez saisi " + scanner.next());
+                LOGGER.error("Erreur vous avez saisi " + scanner.next());
                 System.out.println("Veuillez bien saisir " + longueurCombinaison + " chiffres");
                 String nbre = scanner.nextLine();
                 tabChar = nbre.toCharArray();
-                combinaisonSecreteJoueur = combinaisonSecreteJoueur + (nbre);
+                combinaisonSecreteJoueur +=(nbre);
                 nombreChiffreCombinaisonSecreteJoueur();
             }
         }
         String nbre = scanner.nextLine();
         tabChar = nbre.toCharArray();
-        combinaisonSecreteJoueur = combinaisonSecreteJoueur + (nbre);
+        combinaisonSecreteJoueur += (nbre);
         System.out.println("Vous avez saisi la combinaison secrète " + combinaisonSecreteJoueur + "\n");
     }
 
@@ -269,14 +270,14 @@ public abstract class ModeDeJeux {
         System.out.println("\n");
         System.out.print("Le resultat est ");
         for (int k = 0; k < tabChar.length; k++) {
-            Integer.parseInt(String.valueOf(tabChar[k]));
+            combinaisonJoueur = Integer.parseInt(String.valueOf(tabChar[k]));
             combiIaCompareCombiJoueur = combinaisonIa[k];
             if (combiIaCompareCombiJoueur == combinaisonJoueur) {
-                resultat = resultat + ("=");
-            } else if (combiIaCompareCombiJoueur > combinaisonJoueur) {
-                resultat = resultat + ("-");
+                resultat += ("=");
+            } else if (combiIaCompareCombiJoueur < combinaisonJoueur) {
+                resultat += ("+");
             } else {
-                resultat = resultat + ("+");
+                resultat += ("-");
             }
         }
         System.out.println(resultat);
@@ -299,7 +300,7 @@ public abstract class ModeDeJeux {
      */
     public void resultatPourJoueur() {
         if (saisieJoueur == combiIaComparesaisieJoueur) {
-            System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA");
+            System.out.print("Vous avez gagné, vous avez trouvé la combinaison de l' IA.");
         } else if (saisieJoueur < combiIaComparesaisieJoueur || saisieJoueur > combiIaComparesaisieJoueur)
             System.out.println("Vous n'avez pas trouvé la combinaison de l IA");
     }
@@ -341,14 +342,12 @@ public abstract class ModeDeJeux {
         }
         for (int i = 0; i < resultatDansTab.length; i++) {
             if (Character.toString(resultatDansTab[i]).equals("+")) {
-                nouvelleCombinaisonIa = nouvelleCombinaisonIa
-                        + this.generationNbreAletoire(Character.getNumericValue(combiIaTab[i]), 9);
+                nouvelleCombinaisonIa += this.generationNbreAletoire(Character.getNumericValue(combiIaTab[i]), 9);
             } else if (Character.toString(resultatDansTab[i]).equals("-")) {
 
-                nouvelleCombinaisonIa = nouvelleCombinaisonIa
-                        + this.generationNbreAletoire(0, Character.getNumericValue(combiIaTab[i]));
+                nouvelleCombinaisonIa += this.generationNbreAletoire(0, Character.getNumericValue(combiIaTab[i]));
             } else {
-                nouvelleCombinaisonIa = nouvelleCombinaisonIa + (Character.getNumericValue(combiIaTab[i]));
+                nouvelleCombinaisonIa += (Character.getNumericValue(combiIaTab[i]));
             }
         }
     }
@@ -372,7 +371,6 @@ public abstract class ModeDeJeux {
     public void saisieOperateur() {
         Scanner scan = new Scanner(System.in);
         String operateur = "[-+=]{"+longueurCombinaison+"}";
-        /*Pattern operateur = Pattern.compile("[-+=]{4}");*/
         System.out.println("Veuillez saisir le résultat sous forme d'opérateur + - ou =");
         while (!scan.hasNext(operateur)) {
             if (scan.hasNext()) {
@@ -422,16 +420,15 @@ public abstract class ModeDeJeux {
      * Methode affichant que l'IA et le joueur ont perdus Mode duel
      */
     public void defaiteIaEtJoueur() {
-        if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur < combiIaComparesaisieJoueur
-                && (toursIa == nbEssai)) {
-            System.out.println("Fin de partie, le joueur et l'IA ont perdus");
+        if (!nouvelleCombinaisonIa.equals(combinaisonSecreteJoueur) && saisieJoueur != combiIaComparesaisieJoueur && (toursIa == nbEssai)) {
+            LOGGER.info("Fin de partie, le joueur et l'IA ont perdus");
             System.out.print("La combinaison de l'IA est ");
             {
                 for (int z = 0; z < combinaisonIaSecrete.length; z++)
                     if (saisieJoueur != combiIaComparesaisieJoueur)
-                        System.out.print(combinaisonIaSecrete[z] );
+                        System.out.print(combinaisonIaSecrete[z]);
             }
         }
-        System.out.println("\n");
+        System.out.print("\n");
     }
 }
